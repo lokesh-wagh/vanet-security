@@ -1,0 +1,17 @@
+18:31:52 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+veins_inet/VeinsInetApplicationBase.cc
+veins_inet/VeinsInetManager.cc
+veins_inet/VeinsInetManagerBase.cc
+veins_inet/VeinsInetManagerForker.cc
+veins_inet/VeinsInetMobility.cc
+veins_inet/VeinsInetSampleApplication.cc
+veins_inet/VeinsInetTransparentMobility.cc
+veins_inet/VeinsInetSampleMessage_m.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+
+18:32:08 Build Finished. 0 errors, 0 warnings. (took 16s.184ms)
+
