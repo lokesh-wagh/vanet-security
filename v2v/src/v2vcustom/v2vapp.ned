@@ -16,13 +16,16 @@
 package v2v.v2vcustom;
 
 
-simple V2VApp
+import inet.applications.contract.IApp;
+
+simple V2VApp like IApp
 {
     parameters:
-        int localPort = default(1000);
-        int destPort = default(1001);
-        double sendInterval = default(60);
-
+        int localPort = default(5000);
+        int destPort = default(5000);
+        double sendInterval @unit(s) = default(1s);
+        @display("i=block/app");
+        @class(V2VApp);
     gates:
         input socketIn;
         output socketOut;

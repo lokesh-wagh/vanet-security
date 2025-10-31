@@ -15,6 +15,11 @@ V2VApp::~V2VApp() {
 
 void V2VApp::initialize(int stage) {
     ApplicationBase::initialize(stage);
+
+    if (stage == INITSTAGE_LOCAL) {
+            EV << "✅ Custom V2VApp initialized on node: " << getParentModule()->getFullName() << endl;
+            bubble("Custom V2VApp running!");
+        }
     if (stage == INITSTAGE_LOCAL) {
         localPort = par("localPort");
         destPort = par("destPort");

@@ -1,0 +1,63 @@
+[Config V2VLimited]
+network = V2VNetwork
+sim-time-limit = 60s
+
+# ---------------- Mobility ----------------
+*.node[*].mobility.typename = "RandomWaypointMobility"
+*.node[*].mobility.constraintAreaMinX = 0m
+*.node[*].mobility.constraintAreaMaxX = 1000m
+*.node[*].mobility.constraintAreaMinY = 0m
+*.node[*].mobility.constraintAreaMaxY = 1000m
+*.node[*].mobility.constraintAreaMinZ = 0m
+*.node[*].mobility.constraintAreaMaxZ = 0m
+
+# Movement
+*.node[*].mobility.speed = uniform(5mps, 10mps)
+*.node[*].mobility.waitTime = uniform(1s, 3s)
+
+# NEW → Randomize starting positions so nodes don’t overlap
+*.node[*].mobility.initialX = uniform(0m, 1000m)
+*.node[*].mobility.initialY = uniform(0m, 1000m)
+*.node[*].mobility.initialZ = 0m
+
+# ---------------- Radio Medium ----------------
+*.radioMedium.typename = "Ieee80211ScalarRadioMedium"
+
+# Limit communication distance to 300m
+*.radioMedium.mediumLimitCache.maxTransmissionDistance = 3m
+
+# Optional: Use a physical fading model for realism
+*.radioMedium.pathLoss.typename = "FreeSpacePathLoss"
+*.radioMedium.propagation.typename = "ConstantSpeedPropagation"
+
+# ---------------- WLAN Config ----------------
+*.node[*].wlan[0].typename = "Ieee80211Interface"
+*.node[*].wlan[0].mac.opMode = "p"
+*.node[*].wlan[0].radio.bandName = "2.4 GHz"
+*.node[*].wlan[0].radio.channelNumber = 6
+*.node[*].wlan[0].radio.transmitter.power = 20mW
+*.node[*].wlan[0].radio.receiver.sensitivity = -89dBm
+*.node[*].wlan[0].radio.bandwidth = 10MHz
+*.node[*].wlan[0].radio.displayCommunicationRange = true
+
+# ---------------- UDP Broadcast ----------------
+*.node[*].numApps = 1
+*.node[*].app[0].typename = "UdpBasicApp"
+*.node[*].app[0].destAddresses = "255.255.255.255"
+*.node[*].app[0].localPort = 5000
+*.node[*].app[0].destPort = 5000
+*.node[*].app[0].messageLength = 512B
+*.node[*].app[0].sendInterval = exponential(1s)
+*.node[*].app[0].startTime = uniform(0s, 2s)
+*.node[*].app[0].stopTime = 60s
+*.node[*].app[0].displayAddresses = true
+
+# ---------------- Visualization ----------------
+# ---------------- Visualization ----------------
+*.visualizer.mediumVisualizer.displayCommunicationRanges = true
+*.visualizer.*.range = 3m
+*.visualizer.mediumVisualizer.displaySignals = true
+*.visualizer.mediumVisualizer.communicationRangeLineColor = "blue"
+*.visualizer.mediumVisualizer.communicationRangeLineWidth = 1
+*.visualizer.mediumVisualizer.communicationRangeLineStyle = "dotted"
+
