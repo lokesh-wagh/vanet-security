@@ -1,0 +1,77 @@
+#include "v2vcustom/V2VApp.h"
+#include "inet/applications/base/ApplicationBase.h"
+#include "inet/common/packet/Packet.h"
+#include "inet/common/packet/chunk/BytesChunk.h"
+#include "inet/transportlayer/contract/udp/UdpSocket.h"
+#include "inet/networklayer/common/L3AddressResolver.h"
+#include "inet/common/lifecycle/LifecycleOperation.h"
+
+
+Define_Module(V2VApp);
+
+V2VApp::~V2VApp() {
+    cancelAndDelete(sendTimer);
+}
+
+int V2VApp::numInitStages() const {
+    return NUM_INIT_STAGES;
+}
+
+void V2VApp::initialize(int stage) {
+    ApplicationBase::initialize(stage);
+    if (stage == INITSTAGE_LOCAL) {
+        localPort = par("localPort");
+        destPort = par("destPort");
+        sendInterval = par("sendInterval");
+        sendTimer = new cMessage("sendTimer");
+
+        socket.setOutputGate(gate("socketOut"));
+        socket.bind(localPort);
+        socket.setBroadcast(true);
+
+        destAddr = L3AddressResolver().resolve("255.255.255.255");
+        scheduleAt(simTime() + sendInterval, sendTimer);
+    }
+}
+
+
+void V2VApp::handleStopOperation(LifecycleOperation *operation) {
+    cancelEvent(sendTimer);
+    socket.close();
+}
+
+void V2VApp::handleCrashOperation(LifecycleOperation *operation) {
+    cancelEvent(sendTimer);
+    socket.close();
+}
+
+void V2VApp::handleMessageWhenUp(cMessage *msg) {
+    if (msg == sendTimer) {
+        sendPacket();
+        scheduleAt(simTime() + sendInterval, sendTimer);
+    } else if (auto pk = dynamic_cast<Packet *>(msg)) {
+        receivePacket(pk);
+    } else {
+        delete msg;
+    }
+}
+
+void V2VApp::sendPacket() {
+    auto pk = new Packet("V2VMessage");
+    auto payload = makeShared<BytesChunk>(std::vector<uint8_t>(100, 0));
+    pk->insertAtBack(payload);
+
+    EV_INFO << "Sending broadcast message from " << getFullPath() << endl;
+    socket.sendTo(pk, destAddr, destPort);
+}
+
+void V2VApp::receivePacket(Packet *pk) {
+    EV_INFO << "Received packet: " << pk->getName()
+            << " at " << getFullPath() << endl;
+    delete pk;
+}
+
+void V2VApp::finish() {
+    cancelAndDelete(sendTimer);
+    socket.close();
+}

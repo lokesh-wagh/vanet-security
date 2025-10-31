@@ -1,8 +1,8 @@
-18:31:51 **** Incremental Build of configuration gcc-release for project veins ****
+18:43:48 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 
-18:31:51 Build Finished. 0 errors, 0 warnings. (took 162ms)
+18:43:48 Build Finished. 0 errors, 0 warnings. (took 216ms)
 

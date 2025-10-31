@@ -1,0 +1,102 @@
+#include "v2vcustom/V2VApp.h"
+#include "inet/common/packet/chunk/BytesChunk.h"
+#include "inet/common/packet/Packet.h"
+#include "inet/networklayer/common/L3AddressResolver.h"
+
+Define_Module(V2VApp);
+
+V2VApp::~V2VApp() {
+    // sendTimer may be canceled in finish/stop, but ensure deletion
+    if (sendTimer) {
+        cancelAndDelete(sendTimer);
+        sendTimer = nullptr;
+    }
+    // ensure socket closure
+    try {
+        socket.close();
+    } catch (...) {}
+}
+
+void V2VApp::initialize(int stage) {
+    ApplicationBase::initialize(stage);
+    if (stage == INITSTAGE_LOCAL) {
+        // only read parameters here; do NOT open sockets or schedule events yet
+        localPort = par("localPort");
+        destPort = par("destPort");
+        sendInterval = par("sendInterval");
+        // create timer but do not schedule it until handleStartOperation
+        sendTimer = new cMessage("sendTimer");
+    }
+    // other init stages (if needed) can be handled, but lifecycle start happens later
+}
+
+void V2VApp::handleStartOperation(LifecycleOperation *operation) {
+    // Called when the application is starting up (runtime)
+    // set output gate and bind socket now
+    socket.setOutputGate(gate("socketOut"));
+    socket.open(localPort); // open optional
+    socket.bind(localPort);
+    socket.setBroadcast(true);
+
+    // resolve destination (explicit IPv4 broadcast)
+    destAddr = L3AddressResolver().resolve("255.255.255.255");
+
+    // schedule periodic sending with a small randomized jitter to avoid sync
+    scheduleAt(simTime() + uniform(0, sendInterval), sendTimer);
+
+    EV_INFO << "V2VApp started on " << getFullPath() << ", localPort=" << localPort
+            << ", destPort=" << destPort << ", sendInterval=" << sendInterval << "\n";
+}
+
+void V2VApp::handleStopOperation(LifecycleOperation *operation) {
+    // stop: cancel activity and close socket
+    cancelEvent(sendTimer);
+    socket.close();
+    EV_INFO << "V2VApp stopped on " << getFullPath() << "\n";
+}
+
+void V2VApp::handleCrashOperation(LifecycleOperation *operation) {
+    // crash: behave similar to stop but avoid assumptions
+    cancelEvent(sendTimer);
+    try { socket.close(); } catch (...) {}
+    EV_WARN << "V2VApp crashed on " << getFullPath() << "\n";
+}
+
+void V2VApp::handleMessageWhenUp(cMessage *msg) {
+    // when app is up, handle timer or socket messages
+    if (msg == sendTimer) {
+        sendPacket();
+        // reschedule
+        scheduleAt(simTime() + sendInterval, sendTimer);
+    }
+    else if (auto pk = dynamic_cast<Packet *>(msg)) {
+        receivePacket(pk);
+    }
+    else {
+        // delegate socket messages (if any) to the socket
+        socket.processMessage(msg);
+    }
+}
+
+void V2VApp::sendPacket() {
+    auto pk = new Packet("V2VMessage");
+    std::vector<uint8_t> vec(100, 0);
+    auto payload = makeShared<BytesChunk>(vec);
+    pk->insertAtBack(payload);
+
+    EV_INFO << "Sending broadcast message from " << getFullPath() << " at " << simTime() << "\n";
+    socket.sendTo(pk, destAddr, destPort);
+}
+
+void V2VApp::receivePacket(Packet *pk) {
+    EV_INFO << "Received packet: " << pk->getName()
+            << " at " << getFullPath() << " time=" << simTime() << "\n";
+    delete pk;
+}
+
+void V2VApp::finish() {
+    // make sure everything is cleaned up
+    cancelEvent(sendTimer);
+    socket.close();
+    ApplicationBase::finish();
+}
