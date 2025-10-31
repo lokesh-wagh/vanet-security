@@ -1,0 +1,47 @@
+#ifndef __V2VAPP_H
+#define __V2VAPP_H
+
+#include "inet/applications/base/ApplicationBase.h"
+#include "inet/transportlayer/contract/udp/UdpSocket.h"
+#include "inet/common/INETDefs.h"
+#include "inet/common/packet/Packet.h"
+#include "inet/networklayer/common/L3AddressResolver.h"
+#include "inet/common/lifecycle/LifecycleOperation.h" // for LifecycleOperation
+
+using namespace inet;
+
+class V2VApp : public ApplicationBase
+{
+  protected:
+    UdpSocket socket;
+    int localPort = -1;
+    int destPort = -1;
+    L3Address destAddr;
+    cMessage *sendTimer = nullptr;
+    simtime_t sendInterval = 1;
+    // add near other members
+    bool malicious = false;
+    std::string attackType;
+    int attackCounter = 0;
+
+  protected:
+    virtual int numInitStages() const override { return NUM_INIT_STAGES; }
+    virtual void initialize(int stage) override;
+    virtual void handleMessageWhenUp(cMessage *msg) override;
+
+    // lifecycle hooks
+    virtual void handleStartOperation(LifecycleOperation *operation) override;
+    virtual void handleStopOperation(LifecycleOperation *operation) override;
+    virtual void handleCrashOperation(LifecycleOperation *operation) override;
+
+    virtual void finish() override;
+
+    // helpers
+    void sendPacket();
+    void receivePacket(Packet *pk);
+
+  public:
+    virtual ~V2VApp();
+};
+
+#endif // __V2VAPP_H

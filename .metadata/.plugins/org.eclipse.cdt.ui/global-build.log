@@ -2361,3 +2361,170 @@ cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+19:15:56 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+19:15:57 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:15:57 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/AttackerApp.cc
+v2vcustom/V2VApp.cc
+Creating executable: ../out/clang-release/src/v2v
+ld.lld: error: duplicate symbol: typeinfo for V2VApp
+>>> defined at AttackerApp.cc
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(typeinfo for V2VApp)
+>>> defined at V2VApp.cc
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.data.rel.ro+0x7b0)
+
+ld.lld: error: duplicate symbol: V2VApp::~V2VApp()
+>>> defined at AttackerApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::~V2VApp())
+>>> defined at V2VApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x80)
+
+ld.lld: error: duplicate symbol: vtable for V2VApp
+>>> defined at AttackerApp.cc
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(vtable for V2VApp)
+>>> defined at V2VApp.cc
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.data.rel.ro+0x0)
+
+ld.lld: error: duplicate symbol: non-virtual thunk to V2VApp::~V2VApp()
+>>> defined at AttackerApp.cc:0 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:0)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(non-virtual thunk to V2VApp::~V2VApp())
+>>> defined at V2VApp.cc:0 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:0)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x120)
+
+ld.lld: error: duplicate symbol: V2VApp::~V2VApp()
+>>> defined at AttackerApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::~V2VApp())
+>>> defined at V2VApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x80)
+
+ld.lld: error: duplicate symbol: V2VApp::~V2VApp()
+>>> defined at AttackerApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::~V2VApp())
+>>> defined at V2VApp.cc:8 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:8)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x140)
+
+ld.lld: error: duplicate symbol: non-virtual thunk to V2VApp::~V2VApp()
+>>> defined at AttackerApp.cc:0 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:0)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(non-virtual thunk to V2VApp::~V2VApp())
+>>> defined at V2VApp.cc:0 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:0)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x170)
+
+ld.lld: error: duplicate symbol: V2VApp::initialize(int)
+>>> defined at AttackerApp.cc:16 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:16)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::initialize(int))
+>>> defined at V2VApp.cc:16 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:16)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x1a0)
+
+ld.lld: error: duplicate symbol: V2VApp::handleStartOperation(inet::LifecycleOperation*)
+>>> defined at AttackerApp.cc:31 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:31)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::handleStartOperation(inet::LifecycleOperation*))
+>>> defined at V2VApp.cc:44 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:44)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x710)
+
+ld.lld: error: duplicate symbol: V2VApp::handleStopOperation(inet::LifecycleOperation*)
+>>> defined at AttackerApp.cc:47 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:47)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::handleStopOperation(inet::LifecycleOperation*))
+>>> defined at V2VApp.cc:60 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:60)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x9a0)
+
+ld.lld: error: duplicate symbol: V2VApp::handleCrashOperation(inet::LifecycleOperation*)
+>>> defined at AttackerApp.cc:53 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:53)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::handleCrashOperation(inet::LifecycleOperation*))
+>>> defined at V2VApp.cc:66 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:66)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0xad0)
+
+ld.lld: error: duplicate symbol: V2VApp::handleMessageWhenUp(omnetpp::cMessage*)
+>>> defined at AttackerApp.cc:59 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:59)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::handleMessageWhenUp(omnetpp::cMessage*))
+>>> defined at V2VApp.cc:72 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:72)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0xc10)
+
+ld.lld: error: duplicate symbol: V2VApp::receivePacket(inet::Packet*)
+>>> defined at AttackerApp.cc:83 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:83)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::receivePacket(inet::Packet*))
+>>> defined at V2VApp.cc:137 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:137)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x1760)
+
+ld.lld: error: duplicate symbol: V2VApp::sendPacket()
+>>> defined at AttackerApp.cc:72 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:72)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::sendPacket())
+>>> defined at V2VApp.cc:85 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:85)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0xcf0)
+
+ld.lld: error: duplicate symbol: V2VApp::finish()
+>>> defined at AttackerApp.cc:90 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/AttackerApp.cc:90)
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(V2VApp::finish())
+>>> defined at V2VApp.cc:144 (/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src/v2vcustom/V2VApp.cc:144)
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.text+0x1980)
+
+ld.lld: error: duplicate symbol: typeinfo name for V2VApp
+>>> defined at AttackerApp.cc
+>>>            ../out/clang-release/src/v2vcustom/AttackerApp.o:(typeinfo name for V2VApp)
+>>> defined at V2VApp.cc
+>>>            ../out/clang-release/src/v2vcustom/V2VApp.o:(.rodata+0x0)
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [Makefile:113: ../out/clang-release/src/v2v] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+19:16:18 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+19:16:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:16:19 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+19:16:25 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+19:16:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:16:26 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'

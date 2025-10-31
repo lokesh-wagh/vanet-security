@@ -24,9 +24,12 @@ simple V2VApp like IApp
         int localPort = default(5000);
         int destPort = default(5000);
         double sendInterval @unit(s) = default(1s);
+        bool malicious = default(false);          // NEW: whether this node is an attacker
+        string attackType = default("flood");     // NEW: choose attack behavior ("flood","spoof",...)
         @display("i=block/app");
-        @class(V2VApp);
     gates:
         input socketIn;
         output socketOut;
+
 }
+

@@ -19,6 +19,9 @@ class V2VApp : public ApplicationBase
     L3Address destAddr;
     cMessage *sendTimer = nullptr;
     simtime_t sendInterval = 1;
+    bool malicious = false;
+    std::string attackType;
+    int attackCounter = 0;
 
   protected:
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }

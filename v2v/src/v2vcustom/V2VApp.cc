@@ -25,6 +25,19 @@ void V2VApp::initialize(int stage) {
         destPort = par("destPort");
         sendInterval = par("sendInterval");
         sendTimer = new cMessage("sendTimer");
+
+        // read malicious params
+        malicious = par("malicious").boolValue();
+        attackType = par("attackType").stdstringValue();
+        attackCounter = 0;
+
+        if (malicious) {
+            EV_WARN << "**** Node " << getParentModule()->getFullName()
+                    << " configured as MALICIOUS (type=" << attackType << ") ****\n";
+            bubble("MALICIOUS");
+        } else {
+            EV_INFO << "Node " << getParentModule()->getFullName() << " is normal\n";
+        }
     }
 }
 
@@ -70,15 +83,56 @@ void V2VApp::handleMessageWhenUp(cMessage *msg) {
 }
 
 void V2VApp::sendPacket() {
-    auto pk = new Packet("V2VMessage");
-    auto payload = makeShared<BytesChunk>(std::vector<uint8_t>(100, 0));
-    pk->insertAtBack(payload);
+    Packet *pk = new Packet("V2VMessage");
 
-    EV_INFO << "Sending broadcast message from " << getFullPath()
-            << " at " << simTime() << "\n";
+    if (!malicious) {
+        // normal payload: 100 zero bytes
+        std::vector<uint8_t> v(100, 0);
+        auto payload = makeShared<BytesChunk>(v);
+        pk->insertAtBack(payload);
+        EV_INFO << "[" << getParentModule()->getFullName() << "] sending normal message\n";
+        socket.sendTo(pk, destAddr, destPort);
+        return;
+    }
 
-    socket.sendTo(pk, destAddr, destPort);
+    // MALICIOUS BEHAVIOR
+    attackCounter++;
+
+    if (attackType == "flood") {
+        // larger payload, faster sending controlled via ini
+        std::vector<uint8_t> v(1400, 0xAA);
+        // mark first byte so receivers can detect (optional)
+        v[0] = 0xFF;
+        auto payload = makeShared<BytesChunk>(v);
+        pk->insertAtBack(payload);
+        EV_WARN << "[" << getParentModule()->getFullName() << "] FLOOD pkt #" << attackCounter << "\n";
+        socket.sendTo(pk, destAddr, destPort);
+        return;
+    }
+    else if (attackType == "spoof") {
+        // spoof: include fake source id in payload (application-level spoof)
+        std::string msg = "SPOOF_SRC=node_fake_123;";
+        std::vector<uint8_t> v(msg.begin(), msg.end());
+        // rest zeros
+        v.resize(200, 0);
+        auto payload = makeShared<BytesChunk>(v);
+        pk->insertAtBack(payload);
+        EV_WARN << "[" << getParentModule()->getFullPath() << "] sending SPOOF message\n";
+        socket.sendTo(pk, destAddr, destPort);
+        return;
+    }
+    else {
+        // default malicious: abnormal marker + medium size
+        std::vector<uint8_t> v(200, 0x00);
+        v[0] = 0xFE;
+        auto payload = makeShared<BytesChunk>(v);
+        pk->insertAtBack(payload);
+        EV_WARN << "[" << getParentModule()->getFullName() << "] sending unknown-attack payload\n";
+        socket.sendTo(pk, destAddr, destPort);
+        return;
+    }
 }
+
 
 void V2VApp::receivePacket(Packet *pk) {
     EV_INFO << "Received packet '" << pk->getName()
