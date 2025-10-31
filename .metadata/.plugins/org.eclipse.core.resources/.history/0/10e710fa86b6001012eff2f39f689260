@@ -1,0 +1,116 @@
+[Config V2VLimited]
+network = V2VNetwork
+sim-time-limit = 60s
+
+# ---------------- Mobility ----------------
+*.node[*].mobility.typename = "RandomWaypointMobility"
+*.node[*].mobility.constraintAreaMinX = 0m
+*.node[*].mobility.constraintAreaMaxX = 1000m
+*.node[*].mobility.constraintAreaMinY = 0m
+*.node[*].mobility.constraintAreaMaxY = 1000m
+*.node[*].mobility.constraintAreaMinZ = 0m
+*.node[*].mobility.constraintAreaMaxZ = 0m
+
+# Movement
+*.node[*].mobility.speed = uniform(5mps, 10mps)
+*.node[*].mobility.waitTime = uniform(1s, 3s)
+
+# NEW → Randomize starting positions so nodes don't overlap
+*.node[*].mobility.initialX = uniform(0m, 1000m)
+*.node[*].mobility.initialY = uniform(0m, 1000m)
+*.node[*].mobility.initialZ = 0m
+
+# ---------------- Node Appearance ----------------
+# Normal nodes (green)
+*.node[0..6].typename = "StandardHost"
+*.node[0..6].icon = "device/laptop"
+*.node[0..6].displayStringText = "Normal"
+*.node[0..6].i3 = 255
+
+# Malicious nodes (red) - different colors for different attack types
+*.node[7].typename = "StandardHost"
+*.node[7].icon = "device/laptop_s"
+*.node[7].displayStringText = "Flood Attacker"
+*.node[7].i3 = "red"
+
+*.node[8].typename = "StandardHost"
+*.node[8].icon = "device/laptop_s"
+*.node[8].displayStringText = "Flood Attacker"
+*.node[8].i3 = "red"
+
+*.node[9].typename = "StandardHost"
+*.node[9].icon = "device/laptop_s"
+*.node[9].displayStringText = "Flood Attacker"
+*.node[9].i3 = "red"
+
+# ---------------- Radio Medium ----------------
+*.radioMedium.typename = "Ieee80211ScalarRadioMedium"
+
+# Limit communication distance to 300m
+*.radioMedium.mediumLimitCache.maxTransmissionDistance = 3m
+
+# Optional: Use a physical fading model for realism
+*.radioMedium.pathLoss.typename = "FreeSpacePathLoss"
+*.radioMedium.propagation.typename = "ConstantSpeedPropagation"
+
+# ---------------- WLAN Config ----------------
+*.node[*].wlan[0].typename = "Ieee80211Interface"
+*.node[*].wlan[0].mac.opMode = "p"
+*.node[*].wlan[0].radio.bandName = "2.4 GHz"
+*.node[*].wlan[0].radio.channelNumber = 6
+*.node[*].wlan[0].radio.transmitter.power = 20mW
+*.node[*].wlan[0].radio.receiver.sensitivity = -89dBm
+*.node[*].wlan[0].radio.bandwidth = 10MHz
+*.node[*].wlan[0].radio.displayCommunicationRange = true
+
+# Different communication range colors for attackers
+*.node[0..6].wlan[0].radio.displayCommunicationRange = true
+*.node[0..6].wlan[0].radio.communicationRangeColor = "lightblue"
+
+*.node[7..9].wlan[0].radio.displayCommunicationRange = true
+*.node[7..9].wlan[0].radio.communicationRangeColor = "red"
+
+# ---------------- V2V custom app ----------------
+*.node[*].numApps = 1
+*.node[*].app[0].typename = "v2v.v2vcustom.V2VApp"
+
+# pass parameters through (optional; override defaults if you want)
+*.node[*].app[0].localPort = 5000
+*.node[*].app[0].destPort = 5000
+*.node[*].app[0].sendInterval = exponential(1s)
+
+*.node[*].app[0].destAddresses = "255.255.255.255"
+
+*.node[*].app[0].messageLength = 512B
+*.node[*].app[0].startTime = uniform(0s, 2s)
+*.node[*].app[0].stopTime = 60s
+*.node[*].app[0].displayAddresses = true
+
+# Enable evasive action for normal nodes
+*.node[0..6].app[0].enableEvasiveAction = true
+*.node[0..6].app[0].evasiveActionDuration = 5s
+
+# Attacker info
+*.node[0..6].app[0].sendInterval = exponential(1s)
+*.node[0..6].app[0].malicious = false
+
+*.node[7..9].app[0].sendInterval = 0.01s
+*.node[7..9].app[0].malicious = true
+*.node[7..9].app[0].attackType = "flood"   # or "spoof"
+*.node[7..9].app[0].enableEvasiveAction = false
+
+# ---------------- Visualization ----------------
+*.visualizer.mediumVisualizer.displayCommunicationRanges = true
+*.visualizer.*.range = 3m
+*.visualizer.mediumVisualizer.displaySignals = true
+*.visualizer.mediumVisualizer.communicationRangeLineColor = "blue"
+*.visualizer.mediumVisualizer.communicationRangeLineWidth = 1
+*.visualizer.mediumVisualizer.communicationRangeLineStyle = "dotted"
+
+# Different signal colors for normal vs malicious packets
+*.visualizer.mediumVisualizer.signalColor = "blue"
+*.visualizer.mediumVisualizer.signalShape = "ring"
+
+# Statistics recording
+*.node[*].app[0].**.vector-recording = true
+*.node[*].app[0].**.scalar-recording = true

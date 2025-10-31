@@ -2528,3 +2528,244 @@ cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+23:09:35 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:09:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:09:36 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/V2VApp.cc
+v2vcustom/V2VApp.cc:16:9: error: use of undeclared identifier 'evasiveTimer'
+   16 |     if (evasiveTimer) {
+      |         ^
+v2vcustom/V2VApp.cc:17:25: error: use of undeclared identifier 'evasiveTimer'
+   17 |         cancelAndDelete(evasiveTimer);
+      |                         ^
+v2vcustom/V2VApp.cc:18:9: error: use of undeclared identifier 'evasiveTimer'
+   18 |         evasiveTimer = nullptr;
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+      |         ^
+v2vcustom/V2VApp.cc:34:9: error: use of undeclared identifier 'evasiveTimer'
+   34 |         evasiveTimer = new cMessage("evasiveTimer");
+      |         ^
+v2vcustom/V2VApp.cc:42:9: error: use of undeclared identifier 'spoofedSourceId'
+   42 |         spoofedSourceId = par("spoofedSourceId").stdstringValue();
+      |         ^
+v2vcustom/V2VApp.cc:43:9: error: use of undeclared identifier 'dataManipulationProbability'
+   43 |         dataManipulationProbability = par("dataManipulationProbability").doubleValue();
+      |         ^
+v2vcustom/V2VApp.cc:46:9: error: use of undeclared identifier 'enableEvasiveAction'
+   46 |         enableEvasiveAction = par("enableEvasiveAction").boolValue();
+      |         ^
+v2vcustom/V2VApp.cc:47:9: error: use of undeclared identifier 'evasiveActionDuration'
+   47 |         evasiveActionDuration = par("evasiveActionDuration").doubleValue();
+      |         ^
+v2vcustom/V2VApp.cc:50:9: error: use of undeclared identifier 'packetsSent'
+   50 |         packetsSent = 0;
+      |         ^
+v2vcustom/V2VApp.cc:51:9: error: use of undeclared identifier 'packetsReceived'
+   51 |         packetsReceived = 0;
+      |         ^
+v2vcustom/V2VApp.cc:52:9: error: use of undeclared identifier 'packetsDropped'
+   52 |         packetsDropped = 0;
+      |         ^
+v2vcustom/V2VApp.cc:53:9: error: use of undeclared identifier 'packetsManipulated'
+   53 |         packetsManipulated = 0;
+      |         ^
+v2vcustom/V2VApp.cc:54:9: error: use of undeclared identifier 'packetsReplayed'
+   54 |         packetsReplayed = 0;
+      |         ^
+v2vcustom/V2VApp.cc:55:9: error: use of undeclared identifier 'helloFloodPackets'
+   55 |         helloFloodPackets = 0;
+      |         ^
+v2vcustom/V2VApp.cc:56:9: error: use of undeclared identifier 'sybilIdentitiesUsed'
+   56 |         sybilIdentitiesUsed = 0;
+      |         ^
+v2vcustom/V2VApp.cc:57:9: error: use of undeclared identifier 'burstPacketsSent'
+   57 |         burstPacketsSent = 0;
+      |         ^
+v2vcustom/V2VApp.cc:58:9: error: use of undeclared identifier 'evasiveActionsTaken'
+   58 |         evasiveActionsTaken = 0;
+      |         ^
+v2vcustom/V2VApp.cc:61:9: error: use of undeclared identifier 'randomGenerator'
+   61 |         randomGenerator.seed(std::random_device{}());
+      |         ^
+v2vcustom/V2VApp.cc:64:9: error: use of undeclared identifier 'packetsSentSignal'; did you mean 'packetSentSignal'?
+   64 |         packetsSentSignal = registerSignal("packetsSent");
+      |         ^~~~~~~~~~~~~~~~~
+      |         packetSentSignal
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src/inet/common/Simsignals.h:105:5: note: 'packetSentSignal' declared here
+  105 |     packetSentSignal,
+      |     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make[1]: *** [Makefile:123: ../out/clang-release/src/v2vcustom/V2VApp.o] Error 1
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+23:14:36 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:14:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:14:37 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/V2VApp.cc
+v2vcustom/V2VApp.cc:11:9: error: definition of implicitly declared destructor
+   11 | V2VApp::~V2VApp() {
+      |         ^
+v2vcustom/V2VApp.cc:148:38: error: 'BytesChunk' does not refer to a value
+  148 |     auto bytesChunk = pk->peekDataAs<BytesChunk>();
+      |                                      ^
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src/inet/common/packet/chunk/BytesChunk.h:20:16: note: declared here
+   20 | class INET_API BytesChunk : public Chunk
+      |                ^
+v2vcustom/V2VApp.cc:148:27: error: no member named 'peekDataAs' in 'inet::Packet'; did you mean 'peekDataAt'?
+  148 |     auto bytesChunk = pk->peekDataAs<BytesChunk>();
+      |                           ^~~~~~~~~~
+      |                           peekDataAt
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src/inet/common/packet/Packet.h:340:28: note: 'peekDataAt' declared here
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+  340 |     const Ptr<const Chunk> peekDataAt(b offset, b length = b(-1), int flags = 0) const {
+      |                            ^
+v2vcustom/V2VApp.cc:148:50: error: expected expression
+  148 |     auto bytesChunk = pk->peekDataAs<BytesChunk>();
+      |                                                  ^
+v2vcustom/V2VApp.cc:229:19: error: no member named 'setSpeed' in 'inet::IMobility'
+  229 |         mobility->setSpeed(Coord(0, 0, 0));
+      |         ~~~~~~~~  ^
+v2vcustom/V2VApp.cc:243:19: error: no member named 'setSpeed' in 'inet::IMobility'
+  243 |         mobility->setSpeed(Coord(newX, newY, 0));
+      |         ~~~~~~~~  ^
+v2vcustom/V2VApp.cc:272:19: error: no member named 'setSpeed' in 'inet::IMobility'
+  272 |         mobility->setSpeed(originalSpeed);
+      |         ~~~~~~~~  ^
+v2vcustom/V2VApp.cc:470:47: error: invalid operands to binary expression ('const char[18]' and 'const char *')
+  470 |         std::string msg = "HELLO_FLOOD;NODE=" + getParentModule()->getFullName() +
+      |                           ~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 errors generated.
+make[1]: *** [Makefile:123: ../out/clang-release/src/v2vcustom/V2VApp.o] Error 1
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+23:18:31 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:18:32 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:18:32 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/V2VApp.cc
+v2vcustom/V2VApp.cc:13:9: error: definition of implicitly declared destructor
+   13 | V2VApp::~V2VApp() {
+      |         ^
+1 error generated.
+make[1]: *** [Makefile:123: ../out/clang-release/src/v2vcustom/V2VApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+23:20:39 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:20:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:20:40 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/V2VApp.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+23:20:54 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:20:54 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:20:55 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+23:25:34 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+23:25:34 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+23:25:35 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'

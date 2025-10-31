@@ -18,18 +18,37 @@ package v2v.v2vcustom;
 
 import inet.applications.contract.IApp;
 
-simple V2VApp like IApp
+
+module V2VApp like IApp
 {
     parameters:
-        int localPort = default(5000);
-        int destPort = default(5000);
+        int localPort = default(1000);
+        int destPort = default(1000);
         double sendInterval @unit(s) = default(1s);
-        bool malicious = default(false);          // NEW: whether this node is an attacker
-        string attackType = default("flood");     // NEW: choose attack behavior ("flood","spoof",...)
-        @display("i=block/app");
+
+        // Malicious behavior parameters
+        bool malicious = default(false);
+        string attackType = default("flood");
+        string spoofedSourceId = default("fake_node_001");
+        double dataManipulationProbability = default(0.1);
+
+        // Evasive action parameters
+        bool enableEvasiveAction = default(true);
+        double evasiveActionDuration @unit(s) = default(5s);
+
+        @class(V2VApp);
+        @signal[packetsSent](type="long");
+        @signal[packetsReceived](type="long");
+        @signal[packetsDropped](type="long");
+        @signal[packetsManipulated](type="long");
+        @signal[packetsReplayed](type="long");
+        @signal[helloFloodPackets](type="long");
+        @signal[sybilIdentities](type="long");
+        @signal[burstPackets](type="long");
+        @signal[attackEffectiveness](type="double");
+        @signal[evasiveActions](type="long");
+
     gates:
         input socketIn;
         output socketOut;
-
 }
-
