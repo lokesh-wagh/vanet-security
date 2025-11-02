@@ -1,9 +1,9 @@
-18:28:09 **** Incremental Build of configuration release for project v2v ****
+01:05:17 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 
-18:28:09 Build Finished. 0 errors, 0 warnings. (took 173ms)
+01:05:17 Build Finished. 0 errors, 0 warnings. (took 182ms)
 

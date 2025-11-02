@@ -1,9 +1,9 @@
-                                                                
+file 21876 1762114061                                           
 version 3
-run V2VWorking-0-20251102-18:28:10-42825
+run V2VWorking-0-20251103-01:05:18-52435
 attr configname V2VWorking
-attr datetime 20251102-18:28:10
-attr datetimef 20251102-182810
+attr datetime 20251103-01:05:18
+attr datetimef 20251103-010518
 attr experiment V2VWorking
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network V2VNetwork
-attr processid 42825
+attr processid 52435
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -58,58 +58,76 @@ config *.**.nic.phy80211p.snrThreshold 4.0dB
 config *.playgroundSizeX 6000m
 config *.playgroundSizeY 6000m
 config *.playgroundSizeZ 50m
+config cmdenv-express-mode true
+config *.numRSUs 3
+config *.rsu[*].applType "\"RSUApp\""
+config *.rsu[*].appl.internetAddress "\"cloud-server.com\""
+config *.rsu[*].appl.relayToInternet true
+config *.rsu[*].appl.detectionEnabled true
+config *.rsu[0].mobility.x -100
+config *.rsu[0].mobility.y -100
+config *.rsu[0].mobility.z 0
+config *.rsu[1].mobility.x -500
+config *.rsu[1].mobility.y -300
+config *.rsu[1].mobility.z 0
+config *.rsu[2].mobility.x -300
+config *.rsu[2].mobility.y -500
+config *.rsu[2].mobility.z 0
+config *.rsu[*].nic.phy80211p.antennaOffsetZ 8m
+config *.rsu[*].nic.mac1609_4.txPower 50mW
+config *.rsu[*].nic.phy80211p.sensitivity -85dBm
 
-vector 0 V2VNetwork.node[0].nic.phy80211p RadioState ETV
-vector 1 V2VNetwork.node[0].nic.phy80211p RadioChannel ETV
-vector 2 V2VNetwork.manager posx ETV
-vector 3 V2VNetwork.manager posy ETV
-vector 4 V2VNetwork.node[1].nic.phy80211p RadioState ETV
-vector 5 V2VNetwork.node[1].nic.phy80211p RadioChannel ETV
-vector 6 V2VNetwork.manager posx ETV
-vector 7 V2VNetwork.manager posy ETV
-vector 8 V2VNetwork.node[2].nic.phy80211p RadioState ETV
-vector 9 V2VNetwork.node[2].nic.phy80211p RadioChannel ETV
-vector 10 V2VNetwork.manager posx ETV
-vector 11 V2VNetwork.manager posy ETV
-vector 12 V2VNetwork.node[3].nic.phy80211p RadioState ETV
-vector 13 V2VNetwork.node[3].nic.phy80211p RadioChannel ETV
-vector 14 V2VNetwork.manager posx ETV
-vector 15 V2VNetwork.manager posy ETV
-vector 16 V2VNetwork.node[4].nic.phy80211p RadioState ETV
-vector 17 V2VNetwork.node[4].nic.phy80211p RadioChannel ETV
-vector 18 V2VNetwork.manager posx ETV
-vector 19 V2VNetwork.manager posy ETV
-vector 20 V2VNetwork.node[5].nic.phy80211p RadioState ETV
-vector 21 V2VNetwork.node[5].nic.phy80211p RadioChannel ETV
-vector 22 V2VNetwork.manager posx ETV
-vector 23 V2VNetwork.manager posy ETV
-vector 24 V2VNetwork.node[6].nic.phy80211p RadioState ETV
-vector 25 V2VNetwork.node[6].nic.phy80211p RadioChannel ETV
-vector 26 V2VNetwork.manager posx ETV
-vector 27 V2VNetwork.manager posy ETV
-vector 28 V2VNetwork.node[7].nic.phy80211p RadioState ETV
-vector 29 V2VNetwork.node[7].nic.phy80211p RadioChannel ETV
-vector 30 V2VNetwork.manager posx ETV
-vector 31 V2VNetwork.manager posy ETV
-vector 32 V2VNetwork.node[8].nic.phy80211p RadioState ETV
-vector 33 V2VNetwork.node[8].nic.phy80211p RadioChannel ETV
-vector 34 V2VNetwork.manager posx ETV
-vector 35 V2VNetwork.manager posy ETV
-vector 36 V2VNetwork.manager speed ETV
-vector 37 V2VNetwork.manager speed ETV
-vector 38 V2VNetwork.manager speed ETV
-vector 39 V2VNetwork.manager speed ETV
-vector 40 V2VNetwork.manager speed ETV
-vector 41 V2VNetwork.manager speed ETV
+vector 0 V2VNetwork.rsu[0].nic.phy80211p RadioState ETV
+vector 1 V2VNetwork.rsu[0].nic.phy80211p RadioChannel ETV
+vector 2 V2VNetwork.rsu[1].nic.phy80211p RadioState ETV
+vector 3 V2VNetwork.rsu[1].nic.phy80211p RadioChannel ETV
+vector 4 V2VNetwork.rsu[2].nic.phy80211p RadioState ETV
+vector 5 V2VNetwork.rsu[2].nic.phy80211p RadioChannel ETV
+vector 6 V2VNetwork.node[0].nic.phy80211p RadioState ETV
+vector 7 V2VNetwork.node[0].nic.phy80211p RadioChannel ETV
+vector 8 V2VNetwork.manager posx ETV
+vector 9 V2VNetwork.manager posy ETV
+vector 10 V2VNetwork.node[1].nic.phy80211p RadioState ETV
+vector 11 V2VNetwork.node[1].nic.phy80211p RadioChannel ETV
+vector 12 V2VNetwork.manager posx ETV
+vector 13 V2VNetwork.manager posy ETV
+vector 14 V2VNetwork.node[2].nic.phy80211p RadioState ETV
+vector 15 V2VNetwork.node[2].nic.phy80211p RadioChannel ETV
+vector 16 V2VNetwork.manager posx ETV
+vector 17 V2VNetwork.manager posy ETV
+vector 18 V2VNetwork.node[3].nic.phy80211p RadioState ETV
+vector 19 V2VNetwork.node[3].nic.phy80211p RadioChannel ETV
+vector 20 V2VNetwork.manager posx ETV
+vector 21 V2VNetwork.manager posy ETV
+vector 22 V2VNetwork.node[4].nic.phy80211p RadioState ETV
+vector 23 V2VNetwork.node[4].nic.phy80211p RadioChannel ETV
+vector 24 V2VNetwork.manager posx ETV
+vector 25 V2VNetwork.manager posy ETV
+vector 26 V2VNetwork.node[5].nic.phy80211p RadioState ETV
+vector 27 V2VNetwork.node[5].nic.phy80211p RadioChannel ETV
+vector 28 V2VNetwork.manager posx ETV
+vector 29 V2VNetwork.manager posy ETV
+vector 30 V2VNetwork.node[6].nic.phy80211p RadioState ETV
+vector 31 V2VNetwork.node[6].nic.phy80211p RadioChannel ETV
+vector 32 V2VNetwork.manager posx ETV
+vector 33 V2VNetwork.manager posy ETV
+vector 34 V2VNetwork.node[7].nic.phy80211p RadioState ETV
+vector 35 V2VNetwork.node[7].nic.phy80211p RadioChannel ETV
+vector 36 V2VNetwork.manager posx ETV
+vector 37 V2VNetwork.manager posy ETV
+vector 38 V2VNetwork.node[8].nic.phy80211p RadioState ETV
+vector 39 V2VNetwork.node[8].nic.phy80211p RadioChannel ETV
+vector 40 V2VNetwork.manager posx ETV
+vector 41 V2VNetwork.manager posy ETV
 vector 42 V2VNetwork.manager speed ETV
 vector 43 V2VNetwork.manager speed ETV
 vector 44 V2VNetwork.manager speed ETV
-vector 45 V2VNetwork.manager acceleration ETV
-vector 46 V2VNetwork.manager co2emission ETV
-vector 47 V2VNetwork.manager acceleration ETV
-vector 48 V2VNetwork.manager co2emission ETV
-vector 49 V2VNetwork.manager acceleration ETV
-vector 50 V2VNetwork.manager co2emission ETV
+vector 45 V2VNetwork.manager speed ETV
+vector 46 V2VNetwork.manager speed ETV
+vector 47 V2VNetwork.manager speed ETV
+vector 48 V2VNetwork.manager speed ETV
+vector 49 V2VNetwork.manager speed ETV
+vector 50 V2VNetwork.manager speed ETV
 vector 51 V2VNetwork.manager acceleration ETV
 vector 52 V2VNetwork.manager co2emission ETV
 vector 53 V2VNetwork.manager acceleration ETV
@@ -122,48 +140,55 @@ vector 59 V2VNetwork.manager acceleration ETV
 vector 60 V2VNetwork.manager co2emission ETV
 vector 61 V2VNetwork.manager acceleration ETV
 vector 62 V2VNetwork.manager co2emission ETV
-2	5048 158 2 565 0.1 0.9 9 4988.18 4988.18 44893.62 223937457.4116
-3	5206 158 2 565 0.1 0.9 9 1103.33 1103.33 9929.97 10956033.8001
-6	5364 230 2 565 0.1 0.9 9 4379.9516666667 4379.9516666667 39419.565 172655789.42103
-7	5594 230 2 565 0.1 0.9 9 939.80416666667 939.80416666667 8458.2375 7949086.8451563
-10	5824 239 2 565 0.1 0.9 9 4828.4420287331 4828.4420287331 43455.978258598 209824671.82353
-11	6063 239 2 565 0.1 0.9 9 828.46406149801 828.46406149801 7456.1765534821 6177174.310744
-14	6302 239 2 565 0.1 0.9 9 5086.6257838822 5086.6257838822 45779.63205494 232863856.7873
-15	6541 239 2 565 0.1 0.9 9 885.45762634694 885.45762634694 7969.1186371225 7056316.8725036
-18	6780 239 2 565 0.1 0.9 9 4420.6074804687 4420.6074804687 39785.467324219 175875934.46739
-19	7019 212 2 565 0.1 0.9 9 642.07015625 642.07015625 5778.63140625 3710286.7699221
-22	7231 239 2 565 0.1 0.9 9 5043.1912011173 5043.1912011173 45388.720810056 228903997.41924
-23	7470 239 2 565 0.1 0.9 9 885.65701117318 885.65701117318 7970.9131005587 7059495.0729619
-26	7709 230 2 565 0.1 0.9 9 5052.971157218 5052.971157218 45476.740414962 229792657.64109
-27	7939 239 2 565 0.1 0.9 9 876.23132086499 876.23132086499 7886.0818877849 6910031.9489833
-30	8178 239 2 565 0.1 0.9 9 4346.1160286592 4346.1160286592 39115.044257932 169998520.81111
-31	8417 239 2 565 0.1 0.9 9 550.29163181752 550.29163181752 4952.6246863576 2725387.9204355
-34	8656 239 2 565 0.1 0.9 9 4473.3110378618 4473.3110378618 40259.799340757 180094604.77311
-35	8895 239 2 565 0.1 0.9 9 632.73988598312 632.73988598312 5694.6589738481 3603237.8698254
-36	9134 102 12 565 0.2 0.9 8 0 0 0 0
-37	9236 102 12 565 0.2 0.9 8 0 0 0 0
-38	9338 102 12 565 0.2 0.9 8 0 0 0 0
-39	9440 102 12 565 0.2 0.9 8 0 0 0 0
-40	9542 102 12 565 0.2 0.9 8 0 0 0 0
-41	9644 102 12 565 0.2 0.9 8 0 0 0 0
-42	9746 102 12 565 0.2 0.9 8 0 0 0 0
-43	9848 102 12 565 0.2 0.9 8 0 0 0 0
-44	9950 102 12 565 0.2 0.9 8 0 0 0 0
-45	10052 90 31 565 0.3 0.9 7 0 0 0 0
-46	10142 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-47	10260 90 31 565 0.3 0.9 7 0 0 0 0
-48	10350 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-49	10468 90 31 565 0.3 0.9 7 0 0 0 0
-50	10558 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-51	10676 90 31 565 0.3 0.9 7 0 0 0 0
-52	10766 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-53	10884 90 31 565 0.3 0.9 7 0 0 0 0
-54	10974 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-55	11092 90 31 565 0.3 0.9 7 0 0 0 0
-56	11182 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-57	11300 90 31 565 0.3 0.9 7 0 0 0 0
-58	11390 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-59	11508 90 31 565 0.3 0.9 7 0 0 0 0
-60	11598 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
-61	11716 90 31 565 0.3 0.9 7 0 0 0 0
-62	11806 118 31 565 0.3 0.9 7 0.973 0.973 6.811 6.627103
+vector 63 V2VNetwork.manager acceleration ETV
+vector 64 V2VNetwork.manager co2emission ETV
+vector 65 V2VNetwork.manager acceleration ETV
+vector 66 V2VNetwork.manager co2emission ETV
+vector 67 V2VNetwork.manager acceleration ETV
+vector 68 V2VNetwork.manager co2emission ETV
+8	6049 366 5 3025 0.1 1.7 17 4988.18 4989.5532029693 84808.672420785 423088885.28083
+9	6415 366 5 3025 0.1 1.7 17 1103.33 1105.4005087088 18771.103560961 20726742.881575
+12	6781 463 5 3025 0.1 1.7 17 4379.9516666667 4380.9643108986 74466.266842957 326189704.07693
+13	7244 463 5 3025 0.1 1.7 17 936.16588936812 939.80416666667 15951.202892243 14967164.723755
+16	7707 463 5 3025 0.1 1.7 17 4825.9953480634 4828.4420287331 82066.387723775 396170141.94507
+17	8170 463 5 3025 0.1 1.7 17 828.46406149801 828.81705367964 14086.359990738 11672090.971229
+20	8633 463 5 3025 0.1 1.7 17 5086.6257838822 5088.1653718886 86483.415442043 439963606.61436
+21	9096 463 5 3025 0.1 1.7 17 885.45762634694 885.88282511299 15055.75603926 13333870.739371
+24	9559 463 5 3025 0.1 1.7 17 4420.3210208566 4420.6074804687 75148.321950683 332192370.45575
+25	10022 433 5 3025 0.1 1.7 17 642.07015625 644.36183314756 10931.234394533 7028956.0595899
+28	10455 463 5 3025 0.1 1.7 17 5043.1912011173 5043.9730827833 85739.723590657 432429426.12917
+29	10918 463 5 3025 0.1 1.7 17 885.65701117318 887.36622864994 15068.133712281 13355815.180641
+32	11381 453 5 3025 0.1 1.7 17 5052.971157218 5055.2538498862 85916.488521384 434214315.5643
+33	11834 463 5 3025 0.1 1.7 17 876.23132086499 876.85349633483 14900.287682994 13059917.65489
+36	12297 463 5 3025 0.1 1.7 17 4344.8520924781 4346.1160286592 73875.124933939 321031423.28426
+37	12760 463 5 3025 0.1 1.7 17 549.52748174772 550.29163181752 9349.6086904092 5142071.9728558
+40	13223 463 5 3025 0.1 1.7 17 4471.7303847477 4473.3110378618 76035.223071852 340079724.85169
+41	13686 456 5 3025 0.1 1.7 17 631.4396713247 632.73988598312 10747.476559104 6794610.0427979
+42	14142 312 70 3025 0.2 1.7 16 0 2.4864454656141 17.405118259299 43.27687737431
+43	14454 312 70 3025 0.2 1.7 16 0 2.0045285689412 14.031699982588 28.126943485909
+44	14766 312 70 3025 0.2 1.7 16 0 2.4524649926694 17.167254948686 42.102091781883
+45	15078 312 70 3025 0.2 1.7 16 0 1.5972831639228 11.18098214746 17.859194540259
+46	15390 312 70 3025 0.2 1.7 16 0 2.3097215975402 16.168051182781 37.343697007005
+47	15702 312 70 3025 0.2 1.7 16 0 1.8798766718246 13.159136702772 24.737554108892
+48	16014 312 70 3025 0.2 1.7 16 0 2.3656493975548 16.559545782884 39.17407950506
+49	16326 312 70 3025 0.2 1.7 16 0 1.4771120201563 10.339784141094 15.273019440633
+50	16638 312 70 3025 0.2 1.7 16 0 2.0465621652314 14.32593515662 29.318916873098
+51	16950 216 95 3025 0.3 1.7 15 0 24.864454656141 24.864454656141 618.24110534729
+52	17166 331 95 3025 0.3 1.7 15 0.973 16.13097683733 31.303174028093 276.87982201475
+53	17497 216 95 3025 0.3 1.7 15 0 20.045285689412 20.045285689412 401.81347837013
+54	17713 332 95 3025 0.3 1.7 15 0.973 10.891147349431 25.919802473696 134.93842723194
+55	18045 216 95 3025 0.3 1.7 15 0 24.524649926694 24.524649926694 601.4584540269
+56	18261 332 95 3025 0.3 1.7 15 0.973 15.724818293325 30.886835600984 263.9162655901
+57	18593 216 95 3025 0.3 1.7 15 0 15.972831639228 15.972831639228 255.13135057514
+58	18809 332 95 3025 0.3 1.7 15 0.973 7.3360949483388 22.244671345207 69.852052563512
+59	19141 216 95 3025 0.3 1.7 15 0 23.097215975402 23.097215975402 533.48138581436
+60	19357 332 95 3025 0.3 1.7 15 0.973 14.079460654527 29.198816192929 214.77295113482
+61	19689 216 95 3025 0.3 1.7 15 0 18.798766718246 18.798766718246 353.39363012704
+62	19905 332 95 3025 0.3 1.7 15 0.973 9.7180854432742 24.70987918655 110.67373179038
+63	20237 216 95 3025 0.3 1.7 15 0 23.656493975548 23.656493975548 559.62970721514
+64	20453 326 95 3025 0.3 1.7 15 0.973 14.712417863434 29.848469380728 233.03784830712
+65	20779 216 95 3025 0.3 1.7 15 0 14.771120201563 14.771120201563 218.18599200904
+66	20995 332 95 3025 0.3 1.7 15 0.973 6.4398360146834 21.313157658277 57.421733457068
+67	21327 216 95 3025 0.3 1.7 15 0 20.465621652314 20.465621652314 418.84166961568
+68	21543 332 95 3025 0.3 1.7 15 0.973 11.303602254966 26.344710358336 144.12285894248
+

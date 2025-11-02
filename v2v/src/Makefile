@@ -32,7 +32,6 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
 OBJS = \
-    $O/v2vcustom/V2VApp.o \
     $O/veins_inet/VeinsInetApplicationBase.o \
     $O/veins_inet/VeinsInetManager.o \
     $O/veins_inet/VeinsInetManagerBase.o \

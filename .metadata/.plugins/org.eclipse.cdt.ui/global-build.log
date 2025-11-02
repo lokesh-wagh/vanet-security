@@ -1192,3 +1192,883 @@ cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+18:43:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:44:11 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+18:44:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:44:13 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/CustomTraCIDemo11p.cc
+v2vcustom/CustomTraCIDemo11p.cc:3:10: fatal error: 'ieee80211p/DemoBaseApplLayer.h' file not found
+    3 | #include "ieee80211p/DemoBaseApplLayer.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/v2vcustom/CustomTraCIDemo11p.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+18:44:50 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+18:44:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:44:52 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/MyVeinsApp.cc
+v2vcustom/MyVeinsApp.cc:94:18: error: out-of-line definition of 'onWSA' does not match any declaration in 'veins::MyVeinsApp'
+   94 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                  ^~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/traci/MyVeinsApp.h:5:7: note: MyVeinsApp defined here
+    5 | class MyVeinsApp : public DemoBaseApplLayer {
+      |       ^~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:124: ../out/clang-release/src/v2vcustom/MyVeinsApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+18:48:29 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:48:39 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+18:48:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:48:40 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/MyVeinsApp.cc
+v2vcustom/MyVeinsApp.cc:94:18: error: out-of-line definition of 'onWSA' does not match any declaration in 'veins::MyVeinsApp'
+   94 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                  ^~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/traci/MyVeinsApp.h:5:7: note: MyVeinsApp defined here
+    5 | class MyVeinsApp : public DemoBaseApplLayer {
+      |       ^~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:124: ../out/clang-release/src/v2vcustom/MyVeinsApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+19:01:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:101:18: error: redefinition of 'handleSelfMsg'
+  101 | void MyVeinsApp::handleSelfMsg(cMessage* msg) {
+      |                  ^
+veins/modules/application/traci/MyVeinsApp.cc:39:18: note: previous definition is here
+   39 | void MyVeinsApp::handleSelfMsg(cMessage* msg) {
+      |                  ^
+1 error generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+19:04:31 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:20:9: error: use of undeclared identifier 'lastReset'
+   20 |         lastReset = simTime();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:42:21: error: use of undeclared identifier 'lastReset'
+   42 |     if (simTime() - lastReset >= 1.0) {
+      |                     ^
+veins/modules/application/traci/MyVeinsApp.cc:43:9: error: use of undeclared identifier 'messageCounts'
+   43 |         messageCounts.clear();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:44:9: error: use of undeclared identifier 'lastReset'
+   44 |         lastReset = simTime();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:48:36: error: no member named 'getSenderAddress' in 'veins::DemoSafetyMessage'
+   48 |     LAddress::L2Type sender = msg->getSenderAddress();
+      |                               ~~~  ^
+veins/modules/application/traci/MyVeinsApp.cc:49:5: error: use of undeclared identifier 'messageCounts'
+   49 |     messageCounts[sender]++;
+      |     ^
+veins/modules/application/traci/MyVeinsApp.cc:54:9: error: use of undeclared identifier 'messageCounts'
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+   54 |     if (messageCounts[sender] > 20) {
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:57:36: error: use of undeclared identifier 'messageCounts'
+   57 |                 << " | Count: " << messageCounts[sender] << "/sec" << endl;
+      |                                    ^
+8 errors generated.
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+19:05:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:20:9: error: use of undeclared identifier 'lastReset'
+   20 |         lastReset = simTime();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:42:21: error: use of undeclared identifier 'lastReset'
+   42 |     if (simTime() - lastReset >= 1.0) {
+      |                     ^
+veins/modules/application/traci/MyVeinsApp.cc:43:9: error: use of undeclared identifier 'messageCounts'
+   43 |         messageCounts.clear();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:44:9: error: use of undeclared identifier 'lastReset'
+   44 |         lastReset = simTime();
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:48:36: error: no member named 'getSenderAddress' in 'veins::DemoSafetyMessage'
+   48 |     LAddress::L2Type sender = msg->getSenderAddress();
+      |                               ~~~  ^
+veins/modules/application/traci/MyVeinsApp.cc:49:5: error: use of undeclared identifier 'messageCounts'
+   49 |     messageCounts[sender]++;
+      |     ^
+veins/modules/application/traci/MyVeinsApp.cc:54:9: error: use of undeclared identifier 'messageCounts'
+   54 |     if (messageCounts[sender] > 20) {
+      |         ^
+veins/modules/application/traci/MyVeinsApp.cc:57:36: error: use of undeclared identifier 'messageCounts'
+   57 |                 << " | Count: " << messageCounts[sender] << "/sec" << endl;
+      |                                    ^
+8 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+19:05:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:48:36: error: no member named 'getSenderAddress' in 'veins::DemoSafetyMessage'
+   48 |     LAddress::L2Type sender = msg->getSenderAddress();
+      |                               ~~~  ^
+1 error generated.
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+19:07:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:09:17 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+19:09:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:09:18 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/MyVeinsApp.cc
+v2vcustom/MyVeinsApp.cc:94:18: error: out-of-line definition of 'onWSA' does not match any declaration in 'veins::MyVeinsApp'
+   94 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                  ^~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/traci/MyVeinsApp.h:7:7: note: MyVeinsApp defined here
+    7 | class MyVeinsApp : public DemoBaseApplLayer {
+      |       ^~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:124: ../out/clang-release/src/v2vcustom/MyVeinsApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+19:11:32 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+19:11:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+19:11:34 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/MyVeinsApp.cc
+v2vcustom/MyVeinsApp.cc:94:18: error: out-of-line definition of 'onWSA' does not match any declaration in 'veins::MyVeinsApp'
+   94 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                  ^~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/traci/MyVeinsApp.h:7:7: note: MyVeinsApp defined here
+    7 | class MyVeinsApp : public DemoBaseApplLayer {
+      |       ^~~~~~~~~~
+1 error generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: *** [Makefile:124: ../out/clang-release/src/v2vcustom/MyVeinsApp.o] Error 1
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:33:35 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:33:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:33:37 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+rsu/rsuapp.cc:1:10: fatal error: 'RSUApp.h' file not found
+    1 | #include "RSUApp.h"
+      |          ^~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/rsu/rsuapp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:34:26 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:34:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:34:27 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+In file included from rsu/rsuapp.cc:1:
+rsu/rsuapp.h:6:23: error: unknown class name 'DemoBaseApplLayer'; did you mean 'veins::DemoBaseApplLayer'?
+    6 | class RSUApp : public DemoBaseApplLayer {
+      |                       ^~~~~~~~~~~~~~~~~
+      |                       veins::DemoBaseApplLayer
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/ieee80211p/DemoBaseApplLayer.h:58:17: note: 'veins::DemoBaseApplLayer' declared here
+   58 | class VEINS_API DemoBaseApplLayer : public BaseApplLayer {
+      |                 ^
+In file included from rsu/rsuapp.cc:1:
+rsu/rsuapp.h:9:28: error: unknown type name 'WaveShortMessage'
+    9 |         virtual void onWSM(WaveShortMessage* wsm);
+      |                            ^
+rsu/rsuapp.h:17:37: error: unknown type name 'WaveShortMessage'
+   17 |         void relayMessageToInternet(WaveShortMessage* wsm);
+      |                                     ^
+rsu/rsuapp.cc:17:20: error: unknown type name 'WaveShortMessage'
+   17 | void RSUApp::onWSM(WaveShortMessage* wsm) {
+      |                    ^
+rsu/rsuapp.cc:27:37: error: unknown type name 'WaveShortMessage'
+   27 | void RSUApp::relayMessageToInternet(WaveShortMessage* wsm) {
+      |                                     ^
+5 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: *** [Makefile:125: ../out/clang-release/src/rsu/rsuapp.o] Error 1
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:35:53 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:35:54 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:35:54 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+In file included from rsu/rsuapp.cc:1:
+rsu/RSUAPP.h:12:28: error: unknown type name 'WaveShortMessage'
+   12 |         virtual void onWSM(WaveShortMessage* wsm);
+      |                            ^
+rsu/RSUAPP.h:20:37: error: unknown type name 'WaveShortMessage'
+   20 |         void relayMessageToInternet(WaveShortMessage* wsm);
+      |                                     ^
+rsu/rsuapp.cc:17:20: error: unknown type name 'WaveShortMessage'
+   17 | void RSUApp::onWSM(WaveShortMessage* wsm) {
+      |                    ^
+rsu/rsuapp.cc:27:37: error: unknown type name 'WaveShortMessage'
+   27 | void RSUApp::relayMessageToInternet(WaveShortMessage* wsm) {
+      |                                     ^
+4 errors generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/rsu/rsuapp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:36:49 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:36:50 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:36:50 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+In file included from rsu/rsuapp.cc:1:
+rsu/RSUApp.h:12:28: error: unknown type name 'WaveShortMessage'
+   12 |         virtual void onWSM(WaveShortMessage* wsm);
+      |                            ^
+rsu/RSUApp.h:20:37: error: unknown type name 'WaveShortMessage'
+   20 |         void relayMessageToInternet(WaveShortMessage* wsm);
+      |                                     ^
+rsu/rsuapp.cc:19:20: error: unknown type name 'WaveShortMessage'
+   19 | void RSUApp::onWSM(WaveShortMessage* wsm) {
+      |                    ^
+rsu/rsuapp.cc:29:37: error: unknown type name 'WaveShortMessage'
+   29 | void RSUApp::relayMessageToInternet(WaveShortMessage* wsm) {
+      |                                     ^
+4 errors generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/rsu/rsuapp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:39:55 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:39:55 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:39:56 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+rsu/rsuapp.cc:21:68: error: no member named 'getSenderAddress' in 'veins::DemoSafetyMessage'
+   21 |     EV << "RSU " << myId << " received BSM from vehicle: " << bsm->getSenderAddress() << endl;
+      |                                                               ~~~  ^
+rsu/rsuapp.cc:36:60: error: no member named 'getSenderAddress' in 'veins::BaseFrame1609_4'
+   36 |     EV << "RSU " << myId << " received WSM from: " << wsm->getSenderAddress()
+      |                                                       ~~~  ^
+2 errors generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/rsu/rsuapp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:41:32 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:41:32 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:41:33 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+v2vcustom/MyVeinsApp.cc
+v2vcustom/MyVeinsApp.cc:94:18: error: out-of-line definition of 'onWSA' does not match any declaration in 'veins::MyVeinsApp'
+   94 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                  ^~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src/veins/modules/application/traci/MyVeinsApp.h:7:7: note: MyVeinsApp defined here
+    7 | class MyVeinsApp : public DemoBaseApplLayer {
+      |       ^~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:125: ../out/clang-release/src/v2vcustom/MyVeinsApp.o] Error 1
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+00:42:20 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:42:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:42:21 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:43:56 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:43:57 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:43:58 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:44:48 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:44:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:44:50 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:45:21 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:45:22 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:45:22 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:45:51 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:45:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:45:52 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:47:22 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:47:23 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:47:24 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:47:38 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:47:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:47:39 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:47:45 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:47:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:47:46 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:49:35 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:49:35 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:49:36 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+rsu/rsuapp.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:49:42 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:49:43 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:49:43 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:52:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/rsuapp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:52:16 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:52:17 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:52:17 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:52:43 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:52:43 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:52:44 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:55:41 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/rsuapp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:56:35 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:56:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:56:37 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+00:57:03 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+00:57:04 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+00:57:04 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+01:01:19 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/rsuapp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+01:02:28 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+01:02:29 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+01:02:29 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+01:04:34 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+01:04:34 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+01:04:35 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+01:05:16 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+01:05:16 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+01:05:17 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
