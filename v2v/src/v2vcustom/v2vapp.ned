@@ -1,54 +1,24 @@
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-//
-
 package v2v.v2vcustom;
 
+import org.car2x.veins.base.modules.IBaseApplLayer;
 
-import inet.applications.contract.IApp;
-
-
-module V2VApp like IApp
+module V2VApp like IBaseApplLayer
 {
     parameters:
-        int localPort = default(1000);
-        int destPort = default(1000);
+     	int headerLength = default(0);
         double sendInterval @unit(s) = default(1s);
-
-        // Malicious behavior parameters
         bool malicious = default(false);
-        string attackType = default("flood");
-        string spoofedSourceId = default("fake_node_001");
+        string attackType = default("none");
+        string spoofedSourceId = default("normal_node");
         double dataManipulationProbability = default(0.1);
-
-        // Evasive action parameters
-        bool enableEvasiveAction = default(true);
+        bool enableEvasiveAction = default(false);
         double evasiveActionDuration @unit(s) = default(5s);
-
-        @class(V2VApp);
-        @signal[packetsSent](type="long");
-        @signal[packetsReceived](type="long");
-        @signal[packetsDropped](type="long");
-        @signal[packetsManipulated](type="long");
-        @signal[packetsReplayed](type="long");
-        @signal[helloFloodPackets](type="long");
-        @signal[sybilIdentities](type="long");
-        @signal[burstPackets](type="long");
-        @signal[attackEffectiveness](type="double");
-        @signal[evasiveActions](type="long");
+        bool debug = default(false);
+        @display("i=block/control");
 
     gates:
-        input socketIn;
-        output socketOut;
+        input lowerLayerIn;
+        output lowerLayerOut;
+        input lowerControlIn;
+        output lowerControlOut;
 }

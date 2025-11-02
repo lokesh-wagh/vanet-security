@@ -1,9 +1,135 @@
-15:39:29 **** Incremental Build of configuration gcc-release for project veins ****
+17:43:56 **** Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
+MSGC: veins/common.msg
+MSGC: veins/base/messages/AirFrame.msg
+MSGC: veins/base/messages/BorderMsg.msg
+MSGC: veins/base/messages/MacPkt.msg
+MSGC: veins/base/utils/Coord.msg
+MSGC: veins/base/toolbox/Signal.msg
+MSGC: veins/base/utils/POA.msg
+MSGC: veins/base/utils/SimpleAddress.msg
+MSGC: veins/modules/application/traci/TraCIDemo11pMessage.msg
+MSGC: veins/modules/messages/AckTimeOutMessage.msg
+MSGC: veins/modules/messages/AirFrame11p.msg
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+MSGC: veins/modules/messages/DemoSafetyMessage.msg
+MSGC: veins/modules/messages/DemoServiceAdvertisement.msg
+MSGC: veins/modules/messages/Mac80211Ack.msg
+MSGC: veins/modules/messages/Mac80211Pkt.msg
+MSGC: veins/modules/messages/PhyControlMessage.msg
+MSGC: veins/modules/messages/TraCITrafficLightMessage.msg
+veins/base/connectionManager/BaseConnectionManager.cc
+veins/base/connectionManager/ChannelAccess.cc
+veins/base/connectionManager/ConnectionManager.cc
+veins/base/connectionManager/NicEntryDebug.cc
+veins/base/connectionManager/NicEntryDirect.cc
+veins/base/modules/BaseApplLayer.cc
+veins/base/modules/BaseBattery.cc
+veins/base/modules/BaseLayer.cc
+veins/base/modules/BaseMacLayer.cc
+veins/base/modules/BaseMobility.cc
+veins/base/modules/BaseModule.cc
+veins/base/modules/BaseWorldUtility.cc
+veins/base/modules/BatteryAccess.cc
+veins/base/phyLayer/Antenna.cc
+veins/base/phyLayer/BaseDecider.cc
+veins/base/phyLayer/BasePhyLayer.cc
+veins/base/phyLayer/ChannelInfo.cc
+veins/base/phyLayer/Decider.cc
+veins/base/phyLayer/PhyUtils.cc
+veins/base/toolbox/Signal.cc
+veins/base/toolbox/SignalUtils.cc
+veins/base/toolbox/Spectrum.cc
+veins/base/utils/Coord.cc
+veins/base/utils/Heading.cc
+veins/base/utils/NedFunctions.cc
+veins/base/utils/NetwToMacControlInfo.cc
+veins/base/utils/SimpleAddress.cc
+veins/base/utils/winsupport.cc
+veins/modules/analogueModel/BreakpointPathlossModel.cc
+veins/modules/analogueModel/NakagamiFading.cc
+veins/modules/analogueModel/PERModel.cc
+veins/modules/analogueModel/SimpleObstacleShadowing.cc
+veins/modules/analogueModel/SimplePathlossModel.cc
+veins/modules/analogueModel/TwoRayInterferenceModel.cc
+veins/modules/analogueModel/VehicleObstacleShadowing.cc
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/application/traci/TraCIDemoTrafficLightApp.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/mobility/LinearMobility.cc
+veins/modules/mobility/traci/TraCIBuffer.cc
+veins/modules/mobility/traci/TraCIColor.cc
+veins/modules/mobility/traci/TraCICommandInterface.cc
+veins/modules/mobility/traci/TraCIConnection.cc
+veins/modules/mobility/traci/TraCICoordinateTransformation.cc
+veins/modules/mobility/traci/TraCILauncher.cc
+veins/modules/mobility/traci/TraCIMobility.cc
+veins/modules/mobility/traci/TraCIBuffer.cc:116:15: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  116 |     char obuf[length + 1];
+      |               ^~~~~~~~~~
+veins/modules/mobility/traci/TraCIBuffer.cc:116:15: note: read of non-const variable 'length' is not allowed in a constant expression
+veins/modules/mobility/traci/TraCIBuffer.cc:114:14: note: declared here
+  114 |     uint32_t length = read<uint32_t>();
+      |              ^
+1 warning generated.
+veins/modules/mobility/traci/TraCIRegionOfInterest.cc
+veins/modules/mobility/traci/TraCIScenarioManager.cc
+veins/modules/mobility/traci/TraCIScenarioManagerForker.cc
+veins/modules/mobility/traci/TraCIScenarioManagerLaunchd.cc
+veins/modules/mobility/traci/TraCIScreenRecorder.cc
+veins/modules/mobility/traci/TraCIVehicleInserter.cc
+veins/modules/obstacle/MobileHostObstacle.cc
+veins/modules/mobility/traci/TraCIConnection.cc:205:14: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  205 |     char buf[bufLength];
+      |              ^~~~~~~~~
+veins/modules/mobility/traci/TraCIConnection.cc:205:14: note: read of non-const variable 'bufLength' is not allowed in a constant expression
+veins/modules/mobility/traci/TraCIConnection.cc:204:14: note: declared here
+  204 |     uint32_t bufLength = msgLength - sizeof(msgLength);
+      |              ^
+1 warning generated.
+veins/modules/obstacle/Obstacle.cc
+veins/modules/obstacle/ObstacleControl.cc
+veins/modules/obstacle/VehicleObstacleControl.cc
+veins/modules/phy/Decider80211p.cc
+veins/modules/phy/NistErrorRate.cc
+veins/modules/phy/PhyLayer80211p.cc
+veins/modules/phy/SampledAntenna1D.cc
+veins/modules/utility/BBoxLookup.cc
+veins/modules/utility/HasLogProxy.cc
+veins/modules/utility/TimerManager.cc
+veins/modules/world/annotations/AnnotationDummy.cc
+veins/modules/world/annotations/AnnotationManager.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightInterface.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightAbstractLogic.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightSimpleLogic.cc
+veins/visualizer/roads/RoadsCanvasVisualizer.cc
+veins/visualizer/roads/RoadsOsgVisualizer.cc
+veins/common_m.cc
+veins/base/messages/AirFrame_m.cc
+veins/base/messages/BorderMsg_m.cc
+veins/base/messages/MacPkt_m.cc
+veins/base/toolbox/Signal_m.cc
+veins/base/utils/Coord_m.cc
+veins/base/utils/POA_m.cc
+veins/base/utils/SimpleAddress_m.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/AckTimeOutMessage_m.cc
+veins/modules/messages/AirFrame11p_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+veins/modules/messages/Mac80211Ack_m.cc
+veins/modules/messages/Mac80211Pkt_m.cc
+veins/modules/messages/PhyControlMessage_m.cc
+veins/modules/messages/TraCITrafficLightMessage_m.cc
+Creating shared library: ../out/clang-release/src/libveins.so
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-15:48:27 **** Incremental Build of configuration release for project inet4.5 ****
+17:44:08 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -14,18 +140,64 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-15:48:28 **** Incremental Build of configuration gcc-release for project veins ****
+17:44:09 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-15:48:28 **** Incremental Build of configuration release for project v2v ****
+17:44:09 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/V2VApp.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+17:46:02 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+17:46:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+17:46:03 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/CustomTraCIDemo11p.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+17:46:47 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+17:46:48 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+17:46:48 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:00:49 **** Incremental Build of configuration release for project inet4.5 ****
+17:47:26 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -36,40 +208,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:00:50 **** Incremental Build of configuration gcc-release for project veins ****
+17:47:26 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:00:50 **** Incremental Build of configuration release for project v2v ****
+17:47:27 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:01:25 **** Incremental Build of configuration debug for project inet4.5 ****
-make MODE=debug -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O0 -Wall -glldb -fstandalone-debug   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-debug/src/libINET_dbg.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir_dbg -loppsim_dbg -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:01:26 **** Incremental Build of configuration gcc-debug for project veins ****
-make MODE=debug -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:01:26 **** Incremental Build of configuration debug for project v2v ****
-make MODE=debug all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:02:35 **** Incremental Build of configuration release for project inet4.5 ****
+17:49:02 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -80,18 +230,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:02:36 **** Incremental Build of configuration gcc-release for project veins ****
+17:49:03 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:02:37 **** Incremental Build of configuration release for project v2v ****
+17:49:03 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:11:40 **** Incremental Build of configuration release for project inet4.5 ****
+17:50:55 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -102,18 +252,68 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:11:41 **** Incremental Build of configuration gcc-release for project veins ****
+17:50:56 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:11:42 **** Incremental Build of configuration release for project v2v ****
+17:50:56 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/CustomTraCIDemo11p.cc
+v2vcustom/CustomTraCIDemo11p.cc:1:9: warning: #pragma once in main file [-Wpragma-once-outside-header]
+    1 | #pragma once
+      |         ^
+1 warning generated.
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+17:51:07 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+17:51:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+17:51:08 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/CustomTraCIDemo11p.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+17:51:18 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+17:51:19 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+17:51:19 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:15:37 **** Incremental Build of configuration release for project inet4.5 ****
+17:53:36 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -124,18 +324,41 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:15:38 **** Incremental Build of configuration gcc-release for project veins ****
+17:53:37 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:15:38 **** Incremental Build of configuration release for project v2v ****
+17:53:37 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+ieee80211p/DemoBaseApplLayer.cc
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+17:54:01 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+17:54:02 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+17:54:02 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:17:04 **** Incremental Build of configuration release for project inet4.5 ****
+17:56:38 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -146,18 +369,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:17:05 **** Incremental Build of configuration gcc-release for project veins ****
+17:56:39 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:17:05 **** Incremental Build of configuration release for project v2v ****
+17:56:39 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:21:37 **** Incremental Build of configuration release for project inet4.5 ****
+17:59:45 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -168,18 +391,648 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:21:38 **** Incremental Build of configuration gcc-release for project veins ****
+17:59:45 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:21:39 **** Incremental Build of configuration release for project v2v ****
+17:59:46 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+v2vcustom/CustomTraCIDemo11p.cc
+v2vcustom/CustomTraCIDemo11p.cc:9:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+    9 | Define_Module(veins::TraCIDemo11p);
+      |               ~~~~~~~^
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+  136 | #define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+      |                                                    ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  148 |   __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+      |                      ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:152:92: note: expanded from macro '__REGISTER_CLASS_X'
+  152 |   static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+      |                                                                                            ^~~~~~~~~
+v2vcustom/CustomTraCIDemo11p.cc:9:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+    9 | Define_Module(veins::TraCIDemo11p);
+      |               ~~~~~~~^
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+  136 | #define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+      |                                                    ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  148 |   __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+      |                      ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:153:104: note: expanded from macro '__REGISTER_CLASS_X'
+  153 |   static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+      |                                                                                                        ^~~~~~~~~
+v2vcustom/CustomTraCIDemo11p.cc:9:22: error: no member named 'TraCIDemo11p' in namespace 'veins'
+    9 | Define_Module(veins::TraCIDemo11p);
+      |               ~~~~~~~^
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+  136 | #define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+      |                                                    ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  148 |   __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+      |                      ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/regmacros.h:154:125: note: expanded from macro '__REGISTER_CLASS_X'
+  154 |   EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+      |                                                                                                                             ^~~~~~~~~
+/home/lokesh/Downloads/omnetpp-6.2.0/include/omnetpp/onstartup.h:51:30: note: expanded from macro 'EXECUTE_ON_STARTUP'
+   51 |     void __ONSTARTUP_FUNC() {CODE;} \
+      |                              ^~~~
+v2vcustom/CustomTraCIDemo11p.cc:11:6: error: use of undeclared identifier 'TraCIDemo11p'
+   11 | void TraCIDemo11p::initialize(int stage)
+      |      ^
+v2vcustom/CustomTraCIDemo11p.cc:34:6: error: use of undeclared identifier 'TraCIDemo11p'
+   34 | void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+      |      ^
+v2vcustom/CustomTraCIDemo11p.cc:49:6: error: use of undeclared identifier 'TraCIDemo11p'
+   49 | void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+      |      ^
+v2vcustom/CustomTraCIDemo11p.cc:72:6: error: use of undeclared identifier 'TraCIDemo11p'
+   72 | void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+      |      ^
+v2vcustom/CustomTraCIDemo11p.cc:104:6: error: use of undeclared identifier 'TraCIDemo11p'
+  104 | void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+      |      ^
+8 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: *** [Makefile:125: ../out/clang-release/src/v2vcustom/CustomTraCIDemo11p.o] Error 1
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+18:01:36 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+18:01:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:01:37 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+Creating executable: ../out/clang-release/src/v2v
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+18:06:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+In file included from veins/modules/application/traci/MyVeinsApp.cc:23:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+./veins/modules/application/traci/MyVeinsApp.h:1:10: error: #include nested too deeply
+    1 | #include "veins/modules/application/traci/MyVeinsApp.h"
+      |          ^
+./veins/modules/application/traci/MyVeinsApp.h:2:10: error: #include nested too deeply
+    2 | #include "veins/modules/messages/DemoSafetyMessage_m.h"
+      |          ^
+./veins/modules/application/traci/MyVeinsApp.h:3:10: error: #include nested too deeply
+    3 | #include <random>
+      |          ^
+./veins/modules/application/traci/MyVeinsApp.h:5:17: error: expected namespace name
+    5 | using namespace veins;
+      |                 ^
+./veins/modules/application/traci/MyVeinsApp.h:7:15: error: use of undeclared identifier 'veins'
+    7 | Define_Module(veins::MyVeinsApp);
+      |               ^
+./veins/modules/application/traci/MyVeinsApp.h:7:1: error: unknown type name 'Define_Module'
+    7 | Define_Module(veins::MyVeinsApp);
+      | ^
+./veins/modules/application/traci/MyVeinsApp.h:9:6: error: use of undeclared identifier 'MyVeinsApp'
+    9 | void MyVeinsApp::initialize(int stage)
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:40:6: error: use of undeclared identifier 'MyVeinsApp'
+   40 | void MyVeinsApp::finish()
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:60:6: error: use of undeclared identifier 'MyVeinsApp'
+   60 | void MyVeinsApp::onWSM(BaseFrame1609_4* wsm)
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:60:24: error: unknown type name 'BaseFrame1609_4'
+   60 | void MyVeinsApp::onWSM(BaseFrame1609_4* wsm)
+      |                        ^
+./veins/modules/application/traci/MyVeinsApp.h:72:6: error: use of undeclared identifier 'MyVeinsApp'
+   72 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:72:24: error: unknown type name 'DemoServiceAdvertisment'
+   72 | void MyVeinsApp::onWSA(DemoServiceAdvertisment* wsa)
+      |                        ^
+./veins/modules/application/traci/MyVeinsApp.h:77:6: error: use of undeclared identifier 'MyVeinsApp'
+   77 | void MyVeinsApp::handleSelfMsg(cMessage* msg)
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:77:32: error: unknown type name 'cMessage'
+   77 | void MyVeinsApp::handleSelfMsg(cMessage* msg)
+      |                                ^
+./veins/modules/application/traci/MyVeinsApp.h:135:6: error: use of undeclared identifier 'MyVeinsApp'
+  135 | void MyVeinsApp::handlePositionUpdate(cObject* obj)
+      |      ^
+./veins/modules/application/traci/MyVeinsApp.h:135:39: error: unknown type name 'cObject'
+  135 | void MyVeinsApp::handlePositionUpdate(cObject* obj)
+      |                                       ^
+In file included from veins/modules/application/traci/MyVeinsApp.cc:23:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+In file included from ./veins/modules/application/traci/MyVeinsApp.h:1:
+./veins/modules/application/traci/MyVeinsApp.h:5:17: error: expected namespace name
+    5 | using namespace veins;
+      |                 ^
+./veins/modules/application/traci/MyVeinsApp.h:7:15: error: use of undeclared identifier 'veins'
+    7 | Define_Module(veins::MyVeinsApp);
+      |               ^
+./veins/modules/application/traci/MyVeinsApp.h:7:1: error: unknown type name 'Define_Module'
+    7 | Define_Module(veins::MyVeinsApp);
+      | ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+18:07:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:87:27: error: no member named 'setDemoData' in 'veins::DemoSafetyMessage'
+   87 |                 floodMsg->setDemoData("FLOOD_ATTACK");
+      |                 ~~~~~~~~  ^
+veins/modules/application/traci/MyVeinsApp.cc:102:23: error: no member named 'setDemoData' in 'veins::DemoSafetyMessage'
+  102 |             spoofMsg->setDemoData("EMERGENCY_VEHICLE_SPOOF");
+      |             ~~~~~~~~  ^
+veins/modules/application/traci/MyVeinsApp.cc:122:20: error: no member named 'setDemoData' in 'veins::DemoSafetyMessage'
+  122 |         normalMsg->setDemoData("NORMAL_BEACON");
+      |         ~~~~~~~~~  ^
+veins/modules/application/traci/MyVeinsApp.cc:140:25: error: invalid operands to binary expression ('double' and 'int')
+  140 |     if (simTime().dbl() % 10 < 0.1) { // Every ~10 seconds
+      |         ~~~~~~~~~~~~~~~ ^ ~~
+4 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+18:09:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:70:13: error: use of undeclared identifier 'detectMaliciousBehavior'
+   70 |             detectMaliciousBehavior(safetyMsg);
+      |             ^
+veins/modules/application/traci/MyVeinsApp.cc:75:18: error: out-of-line definition of 'detectMaliciousBehavior' does not match any declaration in 'veins::MyVeinsApp'
+   75 | void MyVeinsApp::detectMaliciousBehavior(DemoSafetyMessage* msg)
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+./veins/modules/application/traci/MyVeinsApp.h:10:17: note: MyVeinsApp defined here
+   10 | class VEINS_API MyVeinsApp : public DemoBaseApplLayer {
+      |                 ^~~~~~~~~~
+2 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+18:12:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/MyVeinsApp.cc:70:13: error: use of undeclared identifier 'detectMaliciousBehavior'
+   70 |             detectMaliciousBehavior(safetyMsg);
+      |             ^
+veins/modules/application/traci/MyVeinsApp.cc:75:18: error: out-of-line definition of 'detectMaliciousBehavior' does not match any declaration in 'veins::MyVeinsApp'
+   75 | void MyVeinsApp::detectMaliciousBehavior(DemoSafetyMessage* msg)
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+./veins/modules/application/traci/MyVeinsApp.h:10:17: note: MyVeinsApp defined here
+   10 | class VEINS_API MyVeinsApp : public DemoBaseApplLayer {
+      |                 ^~~~~~~~~~
+2 errors generated.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: *** [Makefile:233: ../out/clang-release/src/veins/modules/application/traci/MyVeinsApp.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j16 all" terminated with exit code 2. Build might be incomplete.
+18:12:29 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:12:48 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+18:12:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:12:50 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:22:57 **** Incremental Build of configuration release for project inet4.5 ****
+18:13:13 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -190,18 +1043,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:22:57 **** Incremental Build of configuration gcc-release for project veins ****
+18:13:14 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:22:58 **** Incremental Build of configuration release for project v2v ****
+18:13:15 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:24:38 **** Incremental Build of configuration release for project inet4.5 ****
+18:14:40 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -212,18 +1065,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:24:39 **** Incremental Build of configuration gcc-release for project veins ****
+18:14:41 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:24:40 **** Incremental Build of configuration release for project v2v ****
+18:14:41 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:26:32 **** Incremental Build of configuration release for project inet4.5 ****
+18:15:38 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -234,18 +1087,24 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:26:33 **** Incremental Build of configuration gcc-release for project veins ****
+18:15:39 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:26:33 **** Incremental Build of configuration release for project v2v ****
+18:15:40 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:27:58 **** Incremental Build of configuration release for project inet4.5 ****
+18:21:21 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+veins/modules/application/traci/MyVeinsApp.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+18:21:36 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -256,18 +1115,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:27:59 **** Incremental Build of configuration gcc-release for project veins ****
+18:21:37 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:27:59 **** Incremental Build of configuration release for project v2v ****
+18:21:37 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:29:27 **** Incremental Build of configuration release for project inet4.5 ****
+18:24:44 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -278,18 +1137,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:29:28 **** Incremental Build of configuration gcc-release for project veins ****
+18:24:45 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:29:29 **** Incremental Build of configuration release for project v2v ****
+18:24:45 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:30:37 **** Incremental Build of configuration release for project inet4.5 ****
+18:26:27 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -300,18 +1159,18 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:30:38 **** Incremental Build of configuration gcc-release for project veins ****
+18:26:27 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:30:39 **** Incremental Build of configuration release for project v2v ****
+18:26:28 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:32:23 **** Incremental Build of configuration release for project inet4.5 ****
+18:28:08 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -322,232 +1181,12 @@ clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed 
 Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:32:24 **** Incremental Build of configuration gcc-release for project veins ****
+18:28:08 **** Incremental Build of configuration gcc-release for project veins ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:32:25 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:34:11 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:34:12 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:34:12 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:36:10 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:36:11 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:36:11 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:37:24 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:37:25 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:37:26 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:37:50 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:37:51 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:37:51 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:39:31 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:39:32 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:39:33 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:41:15 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:41:15 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:41:16 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:42:18 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:42:19 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:42:19 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:43:04 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:43:05 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:43:06 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:44:35 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:44:37 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:44:37 **** Incremental Build of configuration release for project v2v ****
-make MODE=release all 
-cd src && make
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
-16:45:22 **** Incremental Build of configuration release for project inet4.5 ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-*** CCACHE detected - precompiled headers disabled
-*** COMPILING with:
-ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
-*** LINKING with:
-clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
-Building...
-make[1]: Nothing to be done for 'all-pch'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
-16:45:23 **** Incremental Build of configuration gcc-release for project veins ****
-make MODE=release -j16 all 
-make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
-16:45:24 **** Incremental Build of configuration release for project v2v ****
+18:28:09 **** Incremental Build of configuration release for project v2v ****
 make MODE=release all 
 cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'

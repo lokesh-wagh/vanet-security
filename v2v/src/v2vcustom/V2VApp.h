@@ -1,58 +1,70 @@
-#ifndef __V2V_V2VAPP_H__
-#define __V2V_V2VAPP_H__
+#ifndef V2VAPP_H
+#define V2VAPP_H
 
+#include <omnetpp.h>
+#include "veins/base/utils/Coord.h"
+#include "veins/modules/messages/BaseFrame1609_4_m.h"
+#include "veins/modules/messages/DemoSafetyMessage_m.h"
 #include <random>
 #include <vector>
 #include <string>
-#include "inet/common/INETDefs.h"
-#include "inet/applications/base/ApplicationBase.h"
-#include "inet/transportlayer/contract/udp/UdpSocket.h"
-#include "inet/mobility/contract/IMobility.h"
 
-using namespace inet;
+using namespace omnetpp;
 
-class V2VApp : public ApplicationBase
+class V2VApp : public cSimpleModule
 {
-  private:
-    // UDP socket
-    UdpSocket socket;
-    int localPort = -1;
-    int destPort = -1;
-    L3Address destAddr;
+public:
+    virtual void initialize() override;
+    virtual void handleMessage(cMessage* msg) override;
+    virtual void finish() override;
 
+protected:
     // Timers
     cMessage* sendTimer = nullptr;
     cMessage* evasiveTimer = nullptr;
 
-    // Parameters
-    simtime_t sendInterval;
+    // Attack parameters
     bool malicious = false;
     std::string attackType;
+    int attackCounter = 0;
+
+    // Additional attack parameters
     std::string spoofedSourceId;
     double dataManipulationProbability = 0.0;
-    bool enableEvasiveAction = true;
-    double evasiveActionDuration = 5.0;
 
-    // Counters and metrics
-    int attackCounter = 0;
-    long packetsSent = 0;
-    long packetsReceived = 0;
-    long packetsDropped = 0;
-    long packetsManipulated = 0;
-    long packetsReplayed = 0;
-    long helloFloodPackets = 0;
-    long sybilIdentitiesUsed = 0;
-    long burstPacketsSent = 0;
-    long evasiveActionsTaken = 0;
+    // Evasive action parameters
+    bool enableEvasiveAction = false;
+    double evasiveActionDuration = 0.0;
 
-    // Random generator for attacks
-    std::mt19937 randomGenerator;
+    // Metrics and statistics
+    int packetsSent = 0;
+    int packetsReceived = 0;
+    int packetsDropped = 0;
+    int packetsManipulated = 0;
+    int packetsReplayed = 0;
+    int helloFloodPackets = 0;
+    int sybilIdentitiesUsed = 0;
+    int burstPacketsSent = 0;
+    int evasiveActionsTaken = 0;
 
-    // Mobility and state
-    Coord originalSpeed;
-    bool isEmergencyMessageDetected = false;
+    // Random generator
+    std::default_random_engine randomGenerator;
 
-    // Signals for statistics
+    // Current position and speed
+    veins::Coord curPosition;
+    veins::Coord curSpeed;
+
+private:
+    void sendPacket();
+    void receivePacket(cMessage* msg);
+    void processPacketForEvasiveAction(veins::BaseFrame1609_4* frame);
+    bool isImpossiblePosition(const veins::Coord& pos);
+    bool isImpossibleSpeed(const veins::Coord& speed);
+    bool isSuddenPositionChange(const veins::Coord& pos, const veins::Coord& speed);
+    void takeEvasiveAction();
+    void endEvasiveAction();
+
+    // Statistics
     simsignal_t packetsSentSignal;
     simsignal_t packetsReceivedSignal;
     simsignal_t packetsDroppedSignal;
@@ -63,27 +75,6 @@ class V2VApp : public ApplicationBase
     simsignal_t burstPacketsSignal;
     simsignal_t attackEffectivenessSignal;
     simsignal_t evasiveActionsSignal;
-
-  protected:
-    virtual void initialize(int stage) override;
-    virtual void handleMessageWhenUp(cMessage* msg) override;
-    virtual void handleStartOperation(LifecycleOperation* operation) override;
-    virtual void handleStopOperation(LifecycleOperation* operation) override;
-    virtual void handleCrashOperation(LifecycleOperation* operation) override;
-    virtual void finish() override;
-
-  private:
-    void sendPacket();
-    void receivePacket(Packet* pk);
-    void processPacketForEvasiveAction(Packet* pk);
-    bool isMaliciousPattern(const std::vector<uint8_t>& data);
-    bool isEmergencyMessage(const std::vector<uint8_t>& data);
-    bool isCollisionWarning(const std::vector<uint8_t>& data);
-    void takeEvasiveAction();
-    void endEvasiveAction();
-
-  public:
-    virtual ~V2VApp();
 };
 
 #endif
