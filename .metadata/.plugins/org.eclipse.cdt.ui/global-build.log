@@ -2072,3 +2072,25 @@ cd src && make
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+01:09:52 **** Incremental Build of configuration release for project inet4.5 ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+*** CCACHE detected - precompiled headers disabled
+*** COMPILING with:
+ccache clang++ -c -std=c++17 -O3 -DNDEBUG=1 -g1 -ffp-contract=off   -MMD -MP -MF .d  -fPIC  -Wno-deprecated-register -Wno-unused-function -fno-omit-frame-pointer -DBACKWARD_HAS_DW=1  -Wno-overloaded-virtual -DOMNETPPLIBS_IMPORT -DINET_EXPORT -I. -I/home/lokesh/Downloads/omnetpp-6.2.0/include
+*** LINKING with:
+clang++ -shared -fPIC -o ../out/clang-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -lstdc++    -fuse-ld=lld -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/lib -Wl,-rpath,. -Wl,-rpath,/home/lokesh/Downloads/omnetpp-6.2.0/tools/linux.x86_64/lib  -Wl,--export-dynamic -L/home/lokesh/Downloads/omnetpp-6.2.0/lib 
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
+01:09:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j16 all 
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/veins/src'
+01:09:53 **** Incremental Build of configuration release for project v2v ****
+make MODE=release all 
+cd src && make
+make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/src'
