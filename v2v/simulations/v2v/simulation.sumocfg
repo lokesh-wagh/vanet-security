@@ -1,0 +1,24 @@
+<configuration>
+    <input>
+       		<net-file value="/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/simulations/v2v/kr.net.xml"/>
+        <route-files value="/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/simulations/v2v/routes.rou.xml"/>
+    </input>
+
+    <time>
+        <!-- Simulation time settings -->
+        <begin value="0"/>
+        <end value="1000000000"/>
+        <step-length value="1.0"/>
+    </time>
+
+    <processing>
+        <!-- Optional: enable summary and step logging -->
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <report>
+        <!-- Optional logging -->
+        <verbose value="true"/>
+        <no-step-log value="true"/>
+    </report>
+</configuration>

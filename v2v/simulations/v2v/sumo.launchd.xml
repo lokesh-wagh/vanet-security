@@ -1,0 +1,7 @@
+<launch>
+    <copy file="simulation.sumocfg" type="config"/>
+    <configuration>
+        <configuration-file value="test.sumocfg"/>
+        <step-length value="0.1"/>
+    </configuration>
+</launch>

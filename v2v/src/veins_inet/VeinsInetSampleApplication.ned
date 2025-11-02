@@ -22,7 +22,7 @@
 
 package v2v.veins_inet;
 
-import org.car2x.veins.subprojects.veins_inet.VeinsInetApplicationBase;
+import v2v.veins_inet.VeinsInetApplicationBase;
 
 simple VeinsInetSampleApplication extends VeinsInetApplicationBase
 {

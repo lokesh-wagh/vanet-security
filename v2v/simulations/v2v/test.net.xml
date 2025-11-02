@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.9">
+    <location netOffset="0,0" convBoundary="0,0,500,500" origBoundary="0,0,500,500"/>
+    
+    <edge id="edge0" from="n0" to="n1" priority="1" numLanes="1">
+        <lane id="edge0_0" index="0" speed="10" length="200" shape="0,250 200,250"/>
+    </edge>
+    
+    <junction id="n0" type="dead_end" x="0" y="250" incLanes="" intLanes=""/>
+    <junction id="n1" type="dead_end" x="200" y="250" incLanes="" intLanes=""/>
+</net>

@@ -1,0 +1,33 @@
+SB ov 1538 ev 2 rid V2VDynamic-0-20251102-15:48:29-20099
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t v2v.simulations.v2v.V2VNetwork n V2VNetwork cm 1
+MDC id 1 d ""
+MC id 2 c veins::TraCIScenarioManager t org.car2x.veins.modules.mobility.traci.TraCIScenarioManager pid 1 n manager
+MDC id 2 d p=100,100;i=block/network2
+MC id 3 c veins::ConnectionManager t org.car2x.veins.base.connectionManager.ConnectionManager pid 1 n connectionManager
+MDC id 3 d p=100,150;i=abstract/multicast
+MC id 4 c veins::BaseWorldUtility t org.car2x.veins.base.modules.BaseWorldUtility pid 1 n world
+MDC id 4 d p=100,200;i=misc/globe
+CMB sm 1 tm 2 m initialize(0)
+CME
+CMB sm 1 tm 3 m initialize(0)
+- INFO: max interference distance:0
+CME
+CMB sm 1 tm 4 m initialize(0)
+CME
+CMB sm 1 tm 2 m initialize(1)
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n connect pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n connect sm 2 st 0 am 2 at 0 pe 0
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n connect sm 2 st 0 am 2 at 0 pe 0
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n step pe -1
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n step sm 2 st 0 am 2 at 0.1 pe 0
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n step sm 2 st 0 am 2 at 0.1 pe 0
+CME
+CMB sm 1 tm 3 m initialize(1)
+CME
+
+E # 1 t 0 m 2 ce 0 msg 0
+- INFO: TraCIScenarioManager connecting to TraCI server
+
+SE e 1 c 10 m "TraCI server reports unsupported TraCI API version: 1. We recommend using Sumo version 1.0.1 or 0.32.0"

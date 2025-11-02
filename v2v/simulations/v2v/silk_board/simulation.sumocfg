@@ -1,0 +1,27 @@
+<configuration>
+    <input>
+        <!-- Your SUMO network (converted from OSM) -->
+        <net-file value="sikboard.net.xml"/>
+
+        <!-- The routes or trips file -->
+        <route-files value="routes.rou.xml"/>
+    </input>
+
+    <time>
+        <!-- Simulation time settings -->
+        <begin value="0"/>
+        <end value="100"/>
+        <step-length value="1.0"/>
+    </time>
+
+    <processing>
+        <!-- Optional: enable summary and step logging -->
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <report>
+        <!-- Optional logging -->
+        <verbose value="true"/>
+        <no-step-log value="true"/>
+    </report>
+</configuration>

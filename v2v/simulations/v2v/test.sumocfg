@@ -1,0 +1,10 @@
+<configuration>
+    <input>
+        <net-file value="/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/simulations/v2v/test.net.xml"/>
+        <route-files value="/home/lokesh/Downloads/omnetpp-6.2.0/minorproject/v2v/simulations/v2v/test.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="100"/>
+    </time>
+</configuration>
