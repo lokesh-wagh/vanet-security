@@ -2,6 +2,8 @@
 #include "veins/modules/messages/MyMsg_m.h"
 #include <random>
 #include <cmath>
+#include <algorithm>
+#include <sstream>
 
 using namespace veins;
 
@@ -11,7 +13,7 @@ long MyVeinsApp::nextPacketId = 1;
 
 Define_Module(veins::MyVeinsApp);
 
-// ==================== FLOOD ATTACK PREVENTION ====================
+// ==================== ENHANCED FLOOD ATTACK PREVENTION ====================
 
 bool MyVeinsApp::isFloodAttacker(int senderId) {
     auto it = messageCounters.find(senderId);
@@ -20,71 +22,326 @@ bool MyVeinsApp::isFloodAttacker(int senderId) {
     }
 
     MessageCounter& counter = it->second;
+    simtime_t currentTime = simTime();
 
-    // Reset counter if window expired
-    if (simTime() - counter.startTime > detectionWindow) {
-        counter.count = 0;
-        counter.startTime = simTime();
-        counter.isBlacklisted = false; // Give another chance
-        return false;
+    // Enhanced window management with sliding window
+    if (currentTime - counter.startTime > detectionWindow) {
+        // Slide the window - keep recent data for better detection
+        if (counter.messageTimestamps.size() > 0) {
+            // Remove old timestamps outside current window
+            auto oldThreshold = currentTime - detectionWindow;
+            while (!counter.messageTimestamps.empty() &&
+                   counter.messageTimestamps.front() < oldThreshold) {
+                counter.messageTimestamps.pop_front();
+                counter.count = counter.messageTimestamps.size();
+            }
+            counter.startTime = counter.messageTimestamps.empty() ?
+                               currentTime : counter.messageTimestamps.front();
+        } else {
+            counter.count = 0;
+            counter.startTime = currentTime;
+        }
+        counter.isBlacklisted = false; // Give another chance after cleanup
     }
 
-    // Check if exceeds threshold
-    if (counter.count > floodThreshold) {
+    // Multi-level threshold detection
+    if (counter.count > severeFloodThreshold) {
+        // Severe flooding - immediate blacklist
         counter.isBlacklisted = true;
-        EV_INFO << "BLACKLISTED FLOOD ATTACKER: " << senderId
-                << " | Rate: " << counter.count << " msgs/sec" << endl;
+        counter.blacklistTime = currentTime;
+        EV_WARN << "SEVERE FLOOD ATTACK DETECTED: " << senderId
+                << " | Rate: " << counter.count << " msgs/sec"
+                << " | Threshold: " << severeFloodThreshold << endl;
         return true;
     }
+    else if (counter.count > floodThreshold) {
+        // Moderate flooding - check persistence
+        if (counter.suspicionStartTime == -1) {
+            counter.suspicionStartTime = currentTime;
+        }
 
-    return counter.isBlacklisted;
+        simtime_t suspicionDuration = currentTime - counter.suspicionStartTime;
+        if (suspicionDuration > persistentFloodDuration) {
+            counter.isBlacklisted = true;
+            counter.blacklistTime = currentTime;
+            EV_WARN << "PERSISTENT FLOOD ATTACK DETECTED: " << senderId
+                    << " | Rate: " << counter.count << " msgs/sec"
+                    << " | Duration: " << suspicionDuration << "s" << endl;
+            return true;
+        }
+        return false; // Not blacklisted yet, but suspicious
+    }
+    else {
+        // Normal rate - reset suspicion
+        counter.suspicionStartTime = -1;
+        return counter.isBlacklisted; // Return current blacklist status
+    }
 }
 
 void MyVeinsApp::updateMessageCounter(int senderId) {
     auto it = messageCounters.find(senderId);
+    simtime_t currentTime = simTime();
+
     if (it == messageCounters.end()) {
         // First message from this sender
         MessageCounter counter;
         counter.count = 1;
-        counter.startTime = simTime();
+        counter.startTime = currentTime;
+        counter.suspicionStartTime = -1;
         counter.isBlacklisted = false;
+        counter.blacklistTime = -1;
+        counter.messageTimestamps.push_back(currentTime);
         messageCounters[senderId] = counter;
+
+        EV_DEBUG << "New sender registered: " << senderId << endl;
     } else {
         MessageCounter& counter = it->second;
 
-        // Reset if window expired
-        if (simTime() - counter.startTime > detectionWindow) {
-            counter.count = 1;
-            counter.startTime = simTime();
+        // Check if blacklist period has expired
+        if (counter.isBlacklisted && (currentTime - counter.blacklistTime > blacklistTimeout)) {
+            EV_INFO << "Blacklist expired for sender: " << senderId << endl;
             counter.isBlacklisted = false;
-        } else {
-            counter.count++;
+            counter.count = 0;
+            counter.startTime = currentTime;
+            counter.suspicionStartTime = -1;
+            counter.messageTimestamps.clear();
+        }
+
+        if (!counter.isBlacklisted) {
+            // Add current timestamp and maintain sliding window
+            counter.messageTimestamps.push_back(currentTime);
+            counter.count = counter.messageTimestamps.size();
+
+            // Remove timestamps outside the detection window
+            auto oldThreshold = currentTime - detectionWindow;
+            while (!counter.messageTimestamps.empty() &&
+                   counter.messageTimestamps.front() < oldThreshold) {
+                counter.messageTimestamps.pop_front();
+                counter.count = counter.messageTimestamps.size();
+            }
+
+            // Update start time if window was empty
+            if (counter.messageTimestamps.empty()) {
+                counter.startTime = currentTime;
+            }
+
+            // Calculate current message rate for logging
+            double currentRate = counter.count / detectionWindow;
+            if (currentRate > floodThreshold * 0.8) { // Log when approaching threshold
+                EV_DEBUG << "Sender " << senderId << " rate: " << currentRate
+                         << " msgs/sec" << endl;
+            }
         }
     }
 }
 
-// ==================== UPDATED handleLowerMsg ====================
+// ==================== ENHANCED DETECTION ALGORITHMS ====================
+
+bool MyVeinsApp::detectMaliciousBehavior(MyMsg* msg) {
+    bool detected = false;
+    int senderId = msg->getSrcId();
+    std::string detectionReason;
+
+    // ========== ENHANCED FLOOD/DOS DETECTION ==========
+    auto counterIt = messageCounters.find(senderId);
+    if (counterIt != messageCounters.end()) {
+        MessageCounter& counter = counterIt->second;
+        double currentRate = counter.count / detectionWindow;
+
+        // Multi-level flood detection
+        if (currentRate > severeFloodThreshold) {
+            detected = true;
+            std::ostringstream oss;
+            oss << "Severe flooding (" << currentRate << " msgs/sec)";
+            detectionReason = oss.str();
+            counter.isBlacklisted = true;
+            counter.blacklistTime = simTime();
+        }
+        else if (currentRate > floodThreshold) {
+            // Check for burst detection
+            if (detectBurstAttack(counter)) {
+                detected = true;
+                detectionReason = "Burst attack detected";
+                counter.isBlacklisted = true;
+                counter.blacklistTime = simTime();
+            }
+            // Check for sustained high rate
+            else if (counter.suspicionStartTime != -1) {
+                simtime_t suspicionTime = simTime() - counter.suspicionStartTime;
+                if (suspicionTime > persistentFloodDuration) {
+                    detected = true;
+                    std::ostringstream oss;
+                    oss << "Sustained high rate for " << suspicionTime << "s";
+                    detectionReason = oss.str();
+                    counter.isBlacklisted = true;
+                    counter.blacklistTime = simTime();
+                }
+            }
+        }
+
+        // Entropy-based anomaly detection
+        if (!detected && entropyBasedDetectionEnabled) {
+            if (detectAnomalousTraffic(senderId, currentRate)) {
+                detected = true;
+                detectionReason = "Anomalous traffic pattern";
+                counter.suspicionLevel++; // Increase suspicion level
+                if (counter.suspicionLevel > maxSuspicionLevel) {
+                    counter.isBlacklisted = true;
+                    counter.blacklistTime = simTime();
+                }
+            }
+        }
+    }
+
+    // ========== MESSAGE CONTENT VALIDATION ==========
+    if (!detected && messageValidationEnabled) {
+        if (!validateMessageContent(msg)) {
+            detected = true;
+            detectionReason = "Invalid message content";
+            EV_WARN << "Message validation failed for sender: " << senderId << endl;
+        }
+    }
+
+    if (detected) {
+        attacksDetected++;
+        takeEvasiveAction();
+
+        // Log detailed detection information
+        EV_WARN << "MALICIOUS BEHAVIOR DETECTED: " << senderId
+                << " | Reason: " << detectionReason
+                << " | Total detections: " << attacksDetected << endl;
+
+        // Update detection statistics
+        detectionStats.totalDetections++;
+        if (counterIt != messageCounters.end()) {
+            detectionStats.highRateDetections++;
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+bool MyVeinsApp::detectBurstAttack(const MessageCounter& counter) {
+    if (counter.messageTimestamps.size() < minBurstSize) {
+        return false;
+    }
+
+    // Check for rapid succession of messages (burst)
+    auto recentStart = counter.messageTimestamps.end() - std::min((size_t)minBurstSize, counter.messageTimestamps.size());
+    simtime_t burstDuration = counter.messageTimestamps.back() - *recentStart;
+
+    if (burstDuration < maxBurstDuration) {
+        double burstRate = minBurstSize / burstDuration.dbl();
+        EV_DEBUG << "Burst detected: rate=" << burstRate << " msgs/sec, duration=" << burstDuration << endl;
+        return burstRate > burstThreshold;
+    }
+
+    return false;
+}
+
+bool MyVeinsApp::detectAnomalousTraffic(int senderId, double currentRate) {
+    // Calculate average rate across all senders for comparison
+    double totalRate = 0.0;
+    int activeSenders = 0;
+
+    for (const auto& entry : messageCounters) {
+        if (!entry.second.isBlacklisted) {
+            double rate = entry.second.count / detectionWindow;
+            totalRate += rate;
+            activeSenders++;
+        }
+    }
+
+    if (activeSenders > 0) {
+        double averageRate = totalRate / activeSenders;
+        double rateDeviation = std::abs(currentRate - averageRate) / averageRate;
+
+        // If rate is significantly higher than network average
+        if (rateDeviation > anomalyThreshold) {
+            EV_DEBUG << "Anomalous traffic from " << senderId
+                     << ": rate=" << currentRate << ", avg=" << averageRate
+                     << ", deviation=" << rateDeviation << endl;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool MyVeinsApp::validateMessageContent(MyMsg* msg) {
+    // Validate position coordinates
+    double posX = msg->getSenderPosX();
+    double posY = msg->getSenderPosY();
+
+    if (std::isnan(posX) || std::isnan(posY) ||
+        std::isinf(posX) || std::isinf(posY)) {
+        EV_WARN << "Invalid position coordinates in message from " << msg->getSrcId() << endl;
+        return false;
+    }
+
+    // Validate speed (reasonable vehicle speeds)
+    double speedX = msg->getSenderSpeedX();
+    double speedY = msg->getSenderSpeedY();
+    double speed = std::sqrt(speedX * speedX + speedY * speedY);
+
+    if (speed > maxReasonableSpeed) {
+        EV_WARN << "Unreasonable speed in message from " << msg->getSrcId()
+                << ": " << speed << " m/s" << endl;
+        return false;
+    }
+
+    // Validate timestamp (not from future, not too old)
+    simtime_t msgTimestamp = msg->getTimestamp();
+    simtime_t currentTime = simTime();
+
+    if (msgTimestamp > currentTime) {
+        EV_WARN << "Future timestamp in message from " << msg->getSrcId() << endl;
+        return false;
+    }
+
+    if (currentTime - msgTimestamp > maxMessageAge) {
+        EV_WARN << "Stale message from " << msg->getSrcId()
+                << ", age: " << (currentTime - msgTimestamp) << "s" << endl;
+        return false;
+    }
+
+    return true;
+}
+
+// ==================== ENHANCED handleLowerMsg ====================
 
 void MyVeinsApp::handleLowerMsg(cMessage* msg) {
     if (auto myMsg = dynamic_cast<veins::MyMsg*>(msg)) {
         int receiverId = getParentModule()->getId();
         long packetId = myMsg->getPacketId();
         int senderId = myMsg->getSrcId();
-        if (!malicious && detectionEnabled) {
-             if(detectMaliciousBehavior(myMsg)){
-                 delete msg;
-                 return;
-             }
-         }
-        // FLOOD PREVENTION: Check if sender is blacklisted
-        if (isFloodAttacker(senderId)) {
-            EV_INFO << "DROPPED PACKET from blacklisted flood attacker: " << senderId << endl;
-            delete msg;
-            return; // REFUSE to accept packet
-        }
 
-        // Update message counter for flood detection
-        updateMessageCounter(senderId);
+        // ENHANCED FLOOD PREVENTION with multiple checks
+        if (!malicious && detectionEnabled) {
+            // Check blacklist first
+            if (isFloodAttacker(senderId)) {
+                EV_WARN << "DROPPED PACKET from blacklisted flood attacker: " << senderId << endl;
+                detectionStats.packetsBlocked++;
+                attacksDetected++;
+                takeEvasiveAction();
+                delete msg;
+                return;
+            }
+
+            // Update counter and check for new attacks
+            updateMessageCounter(senderId);
+
+            // Comprehensive malicious behavior detection
+            if (detectMaliciousBehavior(myMsg)) {
+                delete msg;
+                return;
+            }
+        } else {
+            // Still update counters even if detection is disabled
+            updateMessageCounter(senderId);
+        }
 
         // ========== UPDATE GLOBAL DELIVERY INFO ==========
         auto it = globalPacketMap.find(packetId);
@@ -143,8 +400,9 @@ void MyVeinsApp::handleLowerMsg(cMessage* msg) {
         // Store message info for statistics
         receivedMessages[myMsg->getSrcId()]++;
 
-
-
+        for(int i=0;i<1000000000;i++){
+                // simulating upper layer calculations that the vehicle needs to make
+        }
 
     } else {
         EV_INFO << "Received non-MyMsg packet: " << msg->getClassName() << endl;
@@ -172,8 +430,6 @@ void MyVeinsApp::populateMyMsg(MyMsg* msg , bool attackPacket) {
        globalPacketMap[packetId] = info;
     }
 
-
-
     // Set position and speed
     msg->setSenderPosX(curPosition.x);
     msg->setSenderPosY(curPosition.y);
@@ -186,55 +442,6 @@ void MyVeinsApp::populateMyMsg(MyMsg* msg , bool attackPacket) {
     msg->setPsid(0);
 }
 
-// ==================== UPDATED detectMaliciousBehavior ====================
-
-bool MyVeinsApp::detectMaliciousBehavior(MyMsg* msg) {
-    bool detected = false;
-    int senderId = msg->getSrcId();
-
-    // Read position and speed from custom fields
-    double senderPosX = msg->getSenderPosX();
-    double senderPosY = msg->getSenderPosY();
-    double senderSpeedX = msg->getSenderSpeedX();
-    double senderSpeedY = msg->getSenderSpeedY();
-
-    // Calculate speed magnitude
-    double speed = sqrt(senderSpeedX * senderSpeedX + senderSpeedY * senderSpeedY);
-
-    // ========== FLOOD/DOS DETECTION USING MESSAGE COUNTERS ==========
-    auto it = messageCounters.find(senderId);
-    if (it != messageCounters.end()) {
-        MessageCounter& counter = it->second;
-
-        // Check if this sender is flooding based on message rate
-        EV_INFO << counter.count << " is detected rate from " << senderId << " and threshold is " << floodThreshold << endl;
-        if (counter.count > floodThreshold) {
-            EV_INFO << "DOS/FLOOD ATTACK DETECTED from " << senderId
-                    << " | Rate: " << counter.count << " msgs/sec" << endl;
-            detected = true;
-
-            // Auto-blacklist the flood attacker
-            counter.isBlacklisted = true;
-            EV_INFO << "AUTO-BLACKLISTED: " << senderId << " for DOS attack" << endl;
-        }
-    }
-
-
-
-    if (detected) {
-        attacksDetected++;
-        takeEvasiveAction();
-
-        // Log the attacker details
-        EV_INFO << "MALICIOUS NODE IDENTIFIED: " << senderId
-                << " | Total attacks detected: " << attacksDetected << endl;
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 // ==================== ESSENTIAL FUNCTIONS ====================
 
 void MyVeinsApp::initialize(int stage) {
@@ -242,9 +449,38 @@ void MyVeinsApp::initialize(int stage) {
     if (stage == 0) {
         malicious = par("malicious");
         attackType = par("attackType").stdstringValue();
+
+        // Enhanced detection parameters
         floodThreshold = par("floodThreshold");
+        severeFloodThreshold = par("severeFloodThreshold");
+        burstThreshold = par("burstThreshold");
+        anomalyThreshold = par("anomalyThreshold");
+        detectionWindow = par("detectionWindow");
+        blacklistTimeout = par("blacklistTimeout");
+        persistentFloodDuration = par("persistentFloodDuration");
+        maxBurstDuration = par("maxBurstDuration");
+        minBurstSize = par("minBurstSize");
+        maxReasonableSpeed = par("maxReasonableSpeed");
+        maxMessageAge = par("maxMessageAge");
+        maxSuspicionLevel = par("maxSuspicionLevel");
+
+        // Detection features
         detectionEnabled = par("detectionEnabled");
-        EV_INFO << "Attack detection: " << (detectionEnabled ? "ENABLED" : "DISABLED") << endl;
+        entropyBasedDetectionEnabled = par("entropyBasedDetection");
+        messageValidationEnabled = par("messageValidation");
+
+        EV_INFO << "Enhanced attack detection: " << (detectionEnabled ? "ENABLED" : "DISABLED") << endl;
+        if (detectionEnabled) {
+            EV_INFO << "Entropy-based detection: " << (entropyBasedDetectionEnabled ? "ON" : "OFF") << endl;
+            EV_INFO << "Message validation: " << (messageValidationEnabled ? "ON" : "OFF") << endl;
+        }
+
+        // Initialize detection statistics
+        detectionStats.totalDetections = 0;
+        detectionStats.highRateDetections = 0;
+        detectionStats.packetsBlocked = 0;
+        detectionStats.falsePositives = 0;
+
         // Attack and defense counters
         attackCounter = 0;
         normalPacketsSent = 0;
@@ -263,9 +499,6 @@ void MyVeinsApp::initialize(int stage) {
         lastInterArrivalTime = -1;
         lastThroughputTime = simTime();
 
-        // Initialize rate-based detection window
-        detectionWindow = 1.0;     // 1 second window
-
         lastWindowStart = simTime();
         packetsInWindow = 0;
 
@@ -275,6 +508,8 @@ void MyVeinsApp::initialize(int stage) {
         endToEndDelayVector.setName("End-to-End Delay");
         jitterVector.setName("Jitter");
         throughputVector.setName("Throughput");
+        detectionRateVector.setName("Detection Rate");
+        falsePositiveVector.setName("False Positives");
 
         if (malicious) {
             attackTimer = new cMessage("attackTimer");
@@ -285,7 +520,6 @@ void MyVeinsApp::initialize(int stage) {
 
             bubble("ATTACKER");
         } else {
-
             EV_INFO << "NORMAL NODE: " << getParentModule()->getFullName() << endl;
             changeNodeColor("green");
         }
@@ -305,7 +539,7 @@ void MyVeinsApp::takeEvasiveAction() {
         bubble("UNDER ATTACK");
         EV_INFO << "EVASIVE ACTION: " << getParentModule()->getFullName()
                 << " taking defensive measures" << endl;
-//
+
         evasiveTimer = new cMessage("evasiveTimer");
         scheduleAt(simTime() + 5, evasiveTimer);
     }
@@ -328,7 +562,7 @@ void MyVeinsApp::handleSelfMsg(cMessage* msg) {
         attackCounter++;
 
         if (attackType == "flood") {
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < 5; i++) {
                 // Use MyMsg instead of DemoSafetyMessage for attacks
                 MyMsg* floodMsg = new MyMsg();
                 populateMyMsg(floodMsg , true);
@@ -422,14 +656,11 @@ void MyVeinsApp::finish() {
             myPacketsSent++;
 
             // Read from ini file to get total non-attacking nodes
-            int totalNodes = 9;
-             int attackingNodes = 3;
+            int totalNodes = totalAttackers + totalDefenders;
+             int attackingNodes = totalAttackers;
 
-            int totalNonAttackers = totalDefenders;
-
-
-            // Packet delivered if all non-attacking nodes received it (excluding myself)
-            int expectedReceivers = totalNonAttackers - 1;
+            // Packet delivered if half non-attacking nodes received it (excluding myself)
+            int expectedReceivers = totalDefenders - 1;
             if (info.receivers.size() >= expectedReceivers / 2) {
                 myPacketsDelivered++;
             }
@@ -440,7 +671,6 @@ void MyVeinsApp::finish() {
         (double)myPacketsDelivered / myPacketsSent * 100 : 0;
 
     // ========== EXISTING PER-NODE STATISTICS ==========
-//    double oldPDR = (packetsSent > 0) ? (double)packetsReceived / packetsSent * 100 : 0;
     double packetLossRatio = (myPacketsSent > 0) ? (double)( myPacketsSent - myPacketsDelivered ) / packetsSent * 100 : 0;
     double avgEndToEndDelay = (myPacketsDelivered > 0) ? totalEndToEndDelay.dbl() / packetsReceived : 0;
     double avgJitter = (jitterCount > 0) ? totalJitterTime.dbl() / jitterCount : 0;
@@ -456,21 +686,40 @@ void MyVeinsApp::finish() {
     EV_INFO << "Attacks Detected: " << attacksDetected << endl;
     EV_INFO << "Throughput (last second): " << (totalBytesReceived * 8) << " bits/sec" << endl;
 
+
+    if (!malicious && detectionEnabled) {
+
+        // Calculate detection accuracy if we have ground truth
+        if (totalAttackers > 0) {
+            double detectionRate = (double)detectionStats.totalDetections / totalAttackers * 100;
+            EV_INFO << "Estimated Detection Rate: " << detectionRate << "%" << endl;
+        }
+
+        // Log blacklisted nodes
+        int blacklistedCount = 0;
+        for (const auto& counter : messageCounters) {
+            if (counter.second.isBlacklisted) {
+                blacklistedCount++;
+                EV_DEBUG << "Blacklisted: Node " << counter.first
+                         << " (suspicion level: " << counter.second.suspicionLevel << ")" << endl;
+            }
+        }
+        EV_INFO << "Total Blacklisted Nodes: " << blacklistedCount << endl;
+    }
+
     // ========== GLOBAL STATISTICS (only node[0]) ==========
     if (getParentModule()->getIndex() == 0) {
         // Calculate global PDR
         int totalPacketsSent = 0;
         int totalPacketsDelivered = 0;
 
-
         int totalNodes = totalDefenders + totalAttackers;
-        int totalNonAttackers = totalDefenders;
 
         for (const auto& entry : globalPacketMap) {
             const DeliveryInfo& info = entry.second;
             totalPacketsSent++;
 
-            int expectedReceivers = totalNonAttackers - 1;
+            int expectedReceivers = totalDefenders - 1;
             if (info.receivers.size() >= expectedReceivers / 2) {
                 totalPacketsDelivered++;
             }
@@ -485,7 +734,7 @@ void MyVeinsApp::finish() {
         EV_INFO << "Total Packets Sent in Network: " << totalPacketsSent << endl;
         EV_INFO << "Total Packets Delivered " << totalPacketsDelivered << endl;
         EV_INFO << "Total Nodes: " << totalNodes << endl;
-        EV_INFO << "Non-Attacking Nodes: " << totalNonAttackers << endl;
+        EV_INFO << "Non-Attacking Nodes: " << totalDefenders << endl;
         EV_INFO << "Attacking Nodes: " << totalAttackers << endl;
 
         EV_INFO << "Total Unique Senders: " << messageCounters.size() << endl;
@@ -499,21 +748,30 @@ void MyVeinsApp::finish() {
         EV_INFO << "Attack Packets Sent: " << attackPacketsSent << endl;
         EV_INFO << "Normal Packets Sent: " << normalPacketsSent << endl;
     } else {
-        int blacklistedAttackers = 0;
-        for (const auto& counter : messageCounters) {
-            if (counter.second.isBlacklisted) {
-                blacklistedAttackers++;
+        if(detectionEnabled){
+            int blacklistedAttackers = 0;
+            for (const auto& counter : messageCounters) {
+                if (counter.second.isBlacklisted) {
+                    blacklistedAttackers++;
+                }
             }
-        }
 
-        EV_INFO << "=== DEFENDER SUMMARY ===" << endl;
-        EV_INFO << "Successful Attack Detections: " << attacksDetected << endl;
-        EV_INFO << "Blacklisted Flood Attackers: " << blacklistedAttackers << endl;
+            EV_INFO << "=== DEFENDER SUMMARY ===" << endl;
+            EV_INFO << "Successful Attack Detections: " << attacksDetected << endl;
+            EV_INFO << "Blacklisted Flood Attackers: " << blacklistedAttackers << endl;
+        }
     }
 
     EV_INFO << "=== END OF STATISTICS ===" << endl << endl;
 
-    if (attackTimer) cancelAndDelete(attackTimer);
-    if (evasiveTimer) cancelAndDelete(evasiveTimer);
+
     DemoBaseApplLayer::finish();
+}
+
+MyVeinsApp::MyVeinsApp() {
+    // Constructor
+}
+
+MyVeinsApp::~MyVeinsApp() {
+    // Destructor
 }
