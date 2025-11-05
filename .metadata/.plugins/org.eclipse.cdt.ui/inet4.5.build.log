@@ -1,4 +1,4 @@
-01:09:52 **** Incremental Build of configuration release for project inet4.5 ****
+19:22:37 **** Incremental Build of configuration release for project inet4.5 ****
 make MODE=release -j16 all 
 make[1]: Entering directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 *** CCACHE detected - precompiled headers disabled
@@ -10,5 +10,5 @@ Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/lokesh/Downloads/omnetpp-6.2.0/samples/inet4.5/src'
 
-01:09:52 Build Finished. 0 errors, 0 warnings. (took 645ms)
+19:22:38 Build Finished. 0 errors, 0 warnings. (took 570ms)
 

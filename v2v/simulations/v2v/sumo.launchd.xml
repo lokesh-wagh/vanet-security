@@ -3,5 +3,11 @@
     <configuration>
         <configuration-file value="test.sumocfg"/>
         <step-length value="0.1"/>
+         <arg value="--no-step-log"/>
+        <arg value="--no-duration-log"/>
+        <arg value="--no-warnings"/>
+        <arg value="--no-internal-links"/>
+        <arg value="--time-to-teleport"/>
+        <arg value="-1"/>
     </configuration>
 </launch>
